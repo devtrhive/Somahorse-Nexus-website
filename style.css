@@ -800,6 +800,15 @@ body {
   background: #ffffff !important;
   color: #000 !important;
 }
+@media (min-width: 769px) {
+  #hamburger,
+  .hamburger,
+  .hamburger-menu,
+  .menu-toggle,
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+}
 
 
 
