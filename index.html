@@ -15,8 +15,8 @@
     <div class="nav-wrap container">
       <div class="brand" aria-hidden="false">
         <a href="index.html" class="logo">
-    <img src="somahors logo.jpeg" alt="Somahorse Nexus Logo">
-</a>
+          <img src="somahors logo.jpeg" alt="Somahorse Nexus Logo">
+        </a>
         <div class="brand-text">
           <div class="brand-name">Somahorse Nexus</div>
           <div class="brand-tag">Operating System for Africa's AI Economy</div>
@@ -36,13 +36,13 @@
 
       <div class="nav-actions">
         <button class="cta primary" id="requestProposalDesktop" data-target="contact">Request Proposal</button>
-        <button class="cta primary" id="requestProposalDesktop" data-target="contact">Join as Talent</button>
-        <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">☰</button>
+        <button class="cta primary" id="joinTalentDesktop" data-target="talent">Join as Talent</button>
+        <button class="hamburger menu-toggle" id="hamburger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">☰</button>
       </div>
     </div>
 
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <!-- Mobile menu (slide-down) -->
+    <div id="mobileMenu" class="mobile-menu mobile-nav" aria-hidden="true">
       <ul>
         <li><button class="mobile-link" data-target="home">Home</button></li>
         <li><button class="mobile-link" data-target="about">About</button></li>
@@ -65,12 +65,12 @@
           <div class="hero-left">
             <div class="eyebrow">The Operating System for Africa's AI Economy</div>
             <h1 id="homeHeading">Somahorse Nexus — Accelerating Africa’s AI Revolution</h1>
-            <div class="hero-text-box">
-    <p>We connect and empower Africa’s brightest youth developers to build AI solutions 
-       that transform Education, Agriculture, Fintech, Healthcare and Manufacturing. 
-       We build the pipeline from talent to deployable value.</p>
-</div>
 
+            <div class="hero-text-box">
+              <p>We connect and empower Africa’s brightest youth developers to build AI solutions 
+                 that transform Education, Agriculture, Fintech, Healthcare and Manufacturing. 
+                 We build the pipeline from talent to deployable value.</p>
+            </div>
 
             <div class="hero-ctas">
               <button class="cta primary" data-target="industries">Explore Industries</button>
@@ -78,22 +78,22 @@
               <button class="cta primary" data-target="contact">Request Proposal</button>
             </div>
 
-            <ul class="home-highlights">
-             <div class="feature-card">
-    <div class="card-title">Talent Foundry</div>
-    <div class="card-desc">Real projects, proven capability — not certificates.</div>
-</div>
+            <ul class="home-highlights" aria-label="Highlights">
+              <li class="feature-card">
+                <div class="card-title">Talent Foundry</div>
+                <div class="card-desc">Real projects, proven capability — not certificates.</div>
+              </li>
 
-<div class="feature-card">
-    <div class="card-title">Industrial Solutions Hub</div>
-    <div class="card-desc">Project blueprints matched to verified teams.</div>
-</div>
+              <li class="feature-card">
+                <div class="card-title">Industrial Solutions Hub</div>
+                <div class="card-desc">Project blueprints matched to verified teams.</div>
+              </li>
 
-<div class="feature-card">
-    <div class="card-title">Capital & Impact Dashboard</div>
-    <div class="card-desc">Live tracking of developer earnings and partner impact.</div>
-</div>
-
+              <li class="feature-card">
+                <div class="card-title">Capital & Impact Dashboard</div>
+                <div class="card-desc">Live tracking of developer earnings and partner impact.</div>
+              </li>
+            </ul>
 
           </div>
 
@@ -105,23 +105,23 @@
         </div>
       </div>
 
-      <div class="stats-container">
-    <div class="stat-box">
-        <span class="stat-value">60–70%</span>
-        <span class="stat-label">Target Efficiency Gains</span>
-    </div>
+      <div class="container">
+        <div class="stats-container">
+          <div class="stat-box">
+              <span class="stat-value">60–70%</span>
+              <span class="stat-label">Target Efficiency Gains</span>
+          </div>
 
-    <div class="stat-box">
-        <span class="stat-value">Verified Talent Pool</span>
-        <span class="stat-label">Ready for Commercial Work</span>
-    </div>
+          <div class="stat-box">
+              <span class="stat-value">Verified Talent Pool</span>
+              <span class="stat-label">Ready for Commercial Work</span>
+          </div>
 
-    <div class="stat-box">
-        <span class="stat-value">Billions+</span>
-        <span class="stat-label">Projected Value Unlocked</span>
-    </div>
-</div>
-
+          <div class="stat-box">
+              <span class="stat-value">Billions+</span>
+              <span class="stat-label">Projected Value Unlocked</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -163,13 +163,13 @@
           <div class="card">
             <h4>The People Building This</h4>
             <ul class="team-list">
-              <li><strong>Uchenna Ngubane</strong><span>Founder & CEO</span></li>
-              <li><strong>Sorotiah Mazando</strong><span>Chief Technology Officer</span></li>
-              <li><strong>Nokwazi Xaba</strong><span>Chief Product Officer</span></li>
-              <li><strong>Nkosinathi Ngwenya</strong><span>Full Stack Dev</span></li>
-              <li><strong>Likhona Nyumbeka</strong><span>Social Media Marketer</span></li>
-              <li><strong>Salami Abiodun</strong><span>Full Stack Dev</span></li>
-              <li><strong>Mohamed Massoud</strong><span>Full Stack Dev</span></li>
+              <li><strong data-init="U">Uchenna Ngubane</strong><span>Founder & CEO</span></li>
+              <li><strong data-init="S">Sorotiah Mazando</strong><span>Chief Technology Officer</span></li>
+              <li><strong data-init="N">Nokwazi Xaba</strong><span>Chief Product Officer</span></li>
+              <li><strong data-init="N">Nkosinathi Ngwenya</strong><span>Full Stack Dev</span></li>
+              <li><strong data-init="L">Likhona Nyumbeka</strong><span>Social Media Marketer</span></li>
+              <li><strong data-init="S">Salami Abiodun</strong><span>Full Stack Dev</span></li>
+              <li><strong data-init="M">Mohamed Massoud</strong><span>Full Stack Dev</span></li>
             </ul>
           </div>
 
@@ -277,17 +277,14 @@
           </div>
 
           <div class="card industry-card" tabindex="0" data-key="healthcare">
-            <img src="https://images.unsplash.com/photo-1581091870623-df7c70c8a46c?auto=format&fit=crop&w=1000&q=60" 
-     alt="Healthcare Lab">
-
+            <img src="https://images.unsplash.com/photo-1581091870623-df7c70c8a46c?auto=format&fit=crop&w=1000&q=60" alt="Healthcare Lab">
             <div class="card-title">Healthcare & MedTech</div>
             <ul class="card-features"><li>Diagnostics support</li><li>Workflow automation</li><li>Equipment monitoring</li></ul>
             <div class="inline-body" aria-hidden="true"></div>
           </div>
 
           <div class="card industry-card" tabindex="0" data-key="manufacturing">
-            <img src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1000" 
-     alt="Manufacturing & Automation">
+            <img src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Manufacturing & Automation">
             <div class="card-title">Manufacturing & Automation</div>
             <ul class="card-features"><li>Predictive maintenance</li><li>Quality inspection</li><li>Process optimisation</li></ul>
             <div class="inline-body" aria-hidden="true"></div>
@@ -359,13 +356,21 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <a href="#" class="logo">
-    <img src="somahors logo.jpeg" alt="Somahorse Nexus Logo">
-</a>
+          <img src="somahors logo.jpeg" alt="Somahorse Nexus Logo">
+        </a>
         <div>
           <div class="brand-name">Somahorse Nexus</div>
           <div class="tiny">© Somahorse Nexus 2025</div>
         </div>
       </div>
+
+      <div class="footer-links">
+        <a href="#" class="footer-link" data-target="about">About</a>
+        <a href="#" class="footer-link" data-target="services">Services</a>
+        <a href="#" class="footer-link" data-target="industries">Industries</a>
+        <a href="#" class="footer-link" data-target="contact">Contact</a>
+      </div>
+    </div>
   </footer>
 
   <div id="toast" class="toast" aria-hidden="true"></div>
