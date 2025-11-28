@@ -823,6 +823,73 @@ body {
     display: none !important;
   }
 }
+/* ============================
+   NAVIGATION — MOBILE FIXES
+   ============================ */
+
+/* Hide hamburger on desktop */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+/* Mobile ONLY */
+@media (max-width: 768px) {
+
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: block !important;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 26px;
+  }
+
+  /* Hide desktop nav list on mobile */
+  .nav-list {
+    display: none !important;
+  }
+
+  /* Mobile menu defaults: hidden */
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding-bottom: 20px;
+    z-index: 999;
+  }
+
+  /* Mobile menu open state */
+  .mobile-menu.open {
+    display: block !important;
+  }
+
+  /* Mobile nav styling */
+  .mobile-menu ul {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .mobile-link {
+    text-align: left;
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.04);
+    font-weight: 600;
+  }
+
+  /* Remove black background (THIS FIX) */
+  body {
+    background: var(--white) !important;
+  }
+}
 
 
 
