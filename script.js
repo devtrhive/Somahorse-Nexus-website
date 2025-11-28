@@ -224,3 +224,20 @@ const mobileNav = document.querySelector(".mobile-nav");
 menuToggle.addEventListener("click", () => {
   mobileNav.classList.toggle("open");
 });
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+// Toggle open/close
+hamburger.addEventListener("click", () => {
+  const isOpen = mobileMenu.classList.toggle("active");
+  hamburger.setAttribute("aria-expanded", isOpen);
+});
+
+// Close menu when clicking any mobile link
+document.querySelectorAll(".mobile-link, #requestProposalMobile").forEach(btn => {
+  btn.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+  });
+});
+
