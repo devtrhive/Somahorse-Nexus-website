@@ -693,114 +693,98 @@ nav {
   display: block !important;
   transform: translateX(0) !important;
 }
-/* ================================
-   MOBILE MENU DESIGN (mobile only)
-================================ */
+/* =========================================================
+   MOBILE FIXES — BASED ON CURRENT HTML STRUCTURE
+   ========================================================= */
 @media (max-width: 768px) {
 
-  /* mobile menu container */
+  /* -----------------------------------------
+     ✔ MOBILE NAVIGATION DROPDOWN DESIGN
+     ----------------------------------------- */
   #mobileMenu {
-    background: rgba(10, 15, 30, 0.97); /* dark, smooth */
-    backdrop-filter: blur(8px);
-    padding: 1.5rem 1rem;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
+    padding: 25px 0;
+    border-radius: 0 0 18px 18px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-    transform: translateY(-20px);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: slideDown 0.25s ease-out;
   }
 
-  /* when opened (JS toggles .open) */
-  #mobileMenu.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  #mobileMenu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  #mobileMenu li {
-    margin: 0.8rem 0;
-  }
-
-  #mobileMenu button,
-  #mobileMenu .mobile-link {
-    width: 100%;
-    padding: 0.9rem 1rem;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 12px;
-    color: white;
-    font-size: 1rem;
-    text-align: left;
+  #mobileMenu a,
+  #mobileMenu button {
+    color: #ffffff;
+    font-size: 1.15rem;
+    text-align: center;
+    border: none;
+    background: none;
+    padding: 6px 0;
   }
 
   #mobileMenu .cta.primary {
-    margin-top: 1rem;
+    width: 80%;
+    margin: 10px auto 0;
+    padding: 12px 0;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+
+  /* -----------------------------------------
+     ✔ ABOUT PAGE MOBILE STACKING FIX
+     ----------------------------------------- */
+
+  /* Break the desktop grid */
+  .about-grid {
+    display: block !important;
+  }
+
+  /* Main about card full width */
+  .about-main {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  /* Side section (people + snapshot) full width */
+  .about-side {
     width: 100%;
   }
 
-  .hamburger {
-    font-size: 2rem;
-    color: white;
-  }
-}
-/* ================================
-   ABOUT PAGE — MOBILE FIX
-================================ */
-@media (max-width: 768px) {
-
-  /* force stacking */
-  .about-grid {
-    display: block;
-  }
-
-  .about-main {
-    width: 100% !important;
-    margin-bottom: 2rem;
-  }
-
-  .about-side {
-    width: 100% !important;
-  }
-
-  .about-side .card {
-    margin-bottom: 1.5rem;
-  }
-
-  /* Team list */
+  /* People building this: make items spaced nicely */
   .team-list li {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0.9rem 1rem;
-    border-radius: 12px;
-    background: var(--card-bg, rgba(255,255,255,0.06));
-    margin-bottom: 0.7rem;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
   }
 
-  .team-list strong {
-    font-size: 1rem;
+  .team-list li span {
+    text-align: right;
+    opacity: 0.8;
   }
 
-  /* Snapshot horizontal layout */
+  /* Snapshot mobile formatting */
   .snapshot-grid {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 15px;
   }
 
   .snap-item {
-    padding: 1rem;
-    border-radius: 12px;
-    background: var(--card-bg, rgba(255,255,255,0.06));
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* Add spacing between sections */
+  .about-side .card {
+    margin-bottom: 25px;
   }
 }
+
 
 
