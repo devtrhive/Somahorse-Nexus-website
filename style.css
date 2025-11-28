@@ -796,6 +796,10 @@ nav {
     display: flex !important;
   }
 }
+body {
+  background: #ffffff !important;
+  color: #000 !important;
+}
 
 
 
