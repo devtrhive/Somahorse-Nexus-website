@@ -228,17 +228,21 @@ const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobileMenu");
 const mobileLinks = document.querySelectorAll(".mobile-link");
 
+// Toggle open/close
 hamburger.addEventListener("click", () => {
-  const isOpen = mobileMenu.classList.toggle("open");
+  mobileMenu.classList.toggle("open");
+
+  const isOpen = mobileMenu.classList.contains("open");
   hamburger.setAttribute("aria-expanded", isOpen);
 });
 
-// Close menu when clicking a mobile link
+// Close menu when selecting a page
 mobileLinks.forEach(link => {
   link.addEventListener("click", () => {
     mobileMenu.classList.remove("open");
     hamburger.setAttribute("aria-expanded", "false");
   });
 });
+
 
 
