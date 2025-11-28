@@ -880,6 +880,46 @@ body {
     background: var(--white) !important;
   }
 }
+/* MOBILE NAV FIX */
+@media (max-width: 768px) {
+
+  /* Mobile menu default state = HIDDEN */
+  #mobileMenu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  /* When opened */
+  #mobileMenu.open {
+    display: block !important;
+  }
+
+  /* Show the hamburger on mobile */
+  .hamburger {
+    display: block !important;
+  }
+
+  /* Hide desktop nav */
+  .nav-list {
+    display: none !important;
+  }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+  #mobileMenu {
+    display: none !important;
+  }
+}
 
 
 
