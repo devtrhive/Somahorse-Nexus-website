@@ -218,3 +218,9 @@ document.querySelectorAll(".service-card").forEach(card => {
   const cancel = document.getElementById('contactCancel');
   if (cancel) cancel.addEventListener('click', () => { document.querySelector('.nav-btn[data-target="home"]').click(); });
 })();
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileNav = document.querySelector(".mobile-nav");
+
+menuToggle.addEventListener("click", () => {
+  mobileNav.classList.toggle("open");
+});
