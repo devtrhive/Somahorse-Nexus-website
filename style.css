@@ -785,6 +785,17 @@ nav {
     margin-bottom: 25px;
   }
 }
+/* Hide hamburger on desktop */
+@media (min-width: 769px) {
+  #hamburger {
+    display: none !important;
+  }
+
+  /* Ensure full nav is visible on desktop */
+  nav .nav-links {
+    display: flex !important;
+  }
+}
 
 
 
