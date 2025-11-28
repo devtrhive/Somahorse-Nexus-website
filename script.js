@@ -226,18 +226,19 @@ menuToggle.addEventListener("click", () => {
 });
 const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobileMenu");
+const mobileLinks = document.querySelectorAll(".mobile-link");
 
-// Toggle open/close
 hamburger.addEventListener("click", () => {
-  const isOpen = mobileMenu.classList.toggle("active");
+  const isOpen = mobileMenu.classList.toggle("open");
   hamburger.setAttribute("aria-expanded", isOpen);
 });
 
-// Close menu when clicking any mobile link
-document.querySelectorAll(".mobile-link, #requestProposalMobile").forEach(btn => {
-  btn.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
+// Close menu when clicking a mobile link
+mobileLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("open");
     hamburger.setAttribute("aria-expanded", "false");
   });
 });
+
 
