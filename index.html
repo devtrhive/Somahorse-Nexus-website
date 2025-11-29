@@ -334,24 +334,78 @@
       </div>
     </section>
 
-    <!-- TALENT -->
-    <section id="talent" class="page" aria-labelledby="talentHeading">
-      <div class="container">
-        <h2 id="talentHeading">Join as Talent</h2>
-        <p class="lead">Join the Talent Foundry — be assessed, build real projects, and get matched to paid work.</p>
+   <section id="join-talent" class="section">
+  <div class="container">
+    <h2 class="section-title">Join as Talent</h2>
+    <p class="section-subtitle">
+      Apply to the Somahorse Talent Foundry — get assessed, build projects, and get matched to paid work.
+    </p>
 
-        <div class="card">
-          <h3>How to join</h3>
-          <ol>
-            <li>Apply with your GitHub / Portfolio.</li>
-            <li>Take an initial assessment to match strengths.</li>
-            <li>Complete a project from our blueprints and get verified.</li>
-            <li>Join the verified pool and start working on paid projects.</li>
-          </ol>
-          <p><strong>Ready?</strong> <button class="cta primary" data-target="contact">Request Proposal / Apply</button></p>
+    <form id="talentForm" class="form-card">
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Country</label>
+          <input type="text" name="country" required>
+        </div>
+
+        <div class="form-group">
+          <label>Primary Role</label>
+          <select name="role" required>
+            <option value="">Select your role</option>
+            <option>Full-Stack Developer</option>
+            <option>Frontend Developer</option>
+            <option>Backend Developer</option>
+            <option>Mobile Developer</option>
+            <option>AI/ML Engineer</option>
+            <option>Data Analyst</option>
+            <option>UI/UX Designer</option>
+            <option>Cloud Engineer</option>
+          </select>
         </div>
       </div>
-    </section>
+
+      <div class="form-group">
+        <label>Your Skills (comma separated)</label>
+        <input type="text" name="skills" placeholder="React, Node.js, Python, Figma, TensorFlow..." required>
+      </div>
+
+      <div class="form-group">
+        <label>Experience Level</label>
+        <select name="experience" required>
+          <option value="">Select your experience</option>
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+          <option>Senior</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Portfolio / GitHub / LinkedIn</label>
+        <input type="url" name="portfolio" placeholder="https://yourportfolio.com" required>
+      </div>
+
+      <div class="form-group">
+        <label>Why do you want to join?</label>
+        <textarea name="message" rows="4" placeholder="Tell us briefly what you want to work on and your goals..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary">Submit Application</button>
+    </form>
+  </div>
+</section>
+
 
     <!-- CONTACT -->
     <section id="contact" class="page" aria-labelledby="contactHeading">
