@@ -835,7 +835,7 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
   width: 100%;
   padding: 12px;
   border: none;
-  background: #4A00E0;
+  background: ##012f6a;
   color: #fff;
   font-size: 1.1rem;
   border-radius: 8px;
@@ -844,7 +844,7 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
 }
 
 .btn-primary:hover {
-  background: #3500a3;
+  background: #012f6a;
 }
 
 
