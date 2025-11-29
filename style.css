@@ -462,22 +462,6 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
   padding: 20px;
 }
 
-/* per-card images (external/absolute URLs so they load reliably) */
-#services .service-card[data-key="custom-dev"]::before {
-  background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?w=1000&auto=format&fit=crop&q=60");
-}
-#services .service-card[data-key="consulting"]::before {
-  background-image: url("https://images.unsplash.com/photo-1526378722484-cc5c91e1c3c5?w=1000&auto=format&fit=crop&q=60");
-}
-#services .service-card[data-key="info-mgmt"]::before {
-  background-image: url("https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1000&auto=format&fit=crop&q=60");
-}
-#services .service-card[data-key="mobile"]::before {
-  background-image: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1000&auto=format&fit=crop&q=60");
-}
-#services .service-card[data-key="analytics"]::before {
-  background-image: url("https://images.unsplash.com/photo-1581093448799-49f0b6a1d8af?w=1000&auto=format&fit=crop&q=60");
-}
 
 /* =========================================================
    MOBILE FIXES ONLY (max-width: 768px)
