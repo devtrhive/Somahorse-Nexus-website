@@ -663,5 +663,84 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
 #services .service-card[data-key="analytics"]::before {
   background-image: url("https://images.unsplash.com/photo-1581093448799-49f0b6a1d8af?w=1000&auto=format&fit=crop&q=60") !important;
 }
+/* =========================================================
+   MOBILE FIXES ONLY (max-width: 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* --------------------------
+     MOBILE MENU DESIGN
+     -------------------------- */
+  #mobileMenu {
+    background: rgba(0, 0, 0, 0.9); /* dark modern menu */
+    backdrop-filter: blur(8px);
+    padding: 20px 0;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    animation: fadeDown 0.25s ease-out;
+  }
+
+  #mobileMenu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: center;
+    padding: 0;
+  }
+
+  #mobileMenu button,
+  #mobileMenu .mobile-link {
+    font-size: 1.1rem;
+    color: white;
+    background: none;
+    border: none;
+  }
+
+  #mobileMenu .cta.primary {
+    margin-top: 10px;
+    width: 80%;
+    align-self: center;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+
+  /* --------------------------
+     ABOUT PAGE — MOBILE LAYOUT
+     -------------------------- */
+
+  .about-grid {
+    display: block !important; /* break the desktop grid */
+  }
+
+  .about-main {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .about-side {
+    width: 100%;
+  }
+
+  .team-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+
+  .snapshot-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .sys-card {
+    margin-bottom: 16px;
+  }
+
+}
 
 
