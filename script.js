@@ -4,9 +4,14 @@
   const pages = Array.from(document.querySelectorAll('.page'));
   const mobileLinks = Array.from(document.querySelectorAll('.mobile-link'));
   const mobileMenu = document.getElementById('mobileMenu');
-  const hamburger = document.getElementById('hamburger');
   const requestDesktop = document.getElementById('requestProposalDesktop');
   const requestMobile = document.getElementById('requestProposalMobile');
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("open");
+});
 
   function showPage(id) {
     pages.forEach(p => p.classList.toggle('active', p.id === id));
@@ -20,14 +25,7 @@
   navBtns.forEach(btn => btn.addEventListener('click', () => showPage(btn.dataset.target)));
   mobileLinks.forEach(ml => ml.addEventListener('click', () => showPage(ml.dataset.target)));
 
-  // hamburger toggle
-  if (hamburger) {
-    hamburger.addEventListener('click', () => {
-      const open = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!open));
-      if (mobileMenu) mobileMenu.setAttribute('aria-hidden', String(open));
-    });
-  }
+
 
   // request proposal shortcuts
   if (requestDesktop) requestDesktop.addEventListener('click', () => showPage('contact'));
