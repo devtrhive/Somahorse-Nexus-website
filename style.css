@@ -401,66 +401,95 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
   color: #222;
   font-size: 0.92rem;
 }
-/* ------------------------------
-   SERVICE CARDS — CLEANED
-   ------------------------------ */
-#services .service-card {
-  position: relative;          /* stacking context for the ::before banner */
-  border-radius: 14px;
-  overflow: hidden;
+/* ============================
+   SERVICE CARDS (FINAL FIX)
+============================ */
+
+.service-card {
   background: #fff;
+  border-radius: 16px;
   border: 1px solid #e8e8e8;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
   transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* ---- IMAGE ---- */
+.service-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- HEAD ---- */
+.card-head {
+  padding: 18px 20px 14px;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0B1A33;
+  margin-bottom: 6px;
+}
+
+/* Details button */
+.toggle-open {
+  background: none;
+  border: none;
+  color: #014AAD;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+/* ---- BODY ---- */
+.card-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 20px;
+  transform: translateY(-8px);
+  transition: 
+    max-height .45s ease,
+    opacity .35s ease,
+    transform .35s ease;
+  border-top: 1px solid #eee;
+}
+
+.service-card.open .card-body {
+  max-height: 400px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 20px;
+}
+
+/* Close button */
+.close-card {
+  margin-top: 12px;
+  background: #014AAD;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
   cursor: pointer;
 }
 
-/* image banner (pseudo-element) */
-#services .service-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 150px;               /* banner height */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 1;                  /* sits behind the card head which will be z-index:2 */
-  pointer-events: none;        /* IMPORTANT — don't block clicks */
-  filter: brightness(0.85);
+.close-card:hover {
+  background: #01306a;
 }
 
-/* move content down so header sits below the banner */
-#services .service-card .card-head {
-  position: relative;
-  z-index: 2;
-  padding-top: 170px;          /* enough space for the banner + breathing room */
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-bottom: 20px;
-  background: #fff;            /* keep header solid so text readable */
+/* REMOVE OLD BROKEN BEFORE IMAGE CODE */
+.service-card::before {
+  content: none !important;
 }
 
-/* hover lift */
-#services .service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
-
-/* open body */
-#services .service-card .card-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .45s ease, opacity .3s ease;
-  opacity: 0;
-  padding: 0 20px;
-  border-top: 1px solid #eee;
-  z-index: 2;
-  position: relative;
-}
-#services .service-card.open .card-body {
-  max-height: 500px;
-  opacity: 1;
-  padding: 20px;
-}
 
 
 /* =========================================================
