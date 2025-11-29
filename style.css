@@ -742,5 +742,97 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
   }
 
 }
+/* =========================================================
+   MOBILE FIXES — BASED ON CURRENT HTML STRUCTURE
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* -----------------------------------------
+     ✔ MOBILE NAVIGATION DROPDOWN DESIGN
+     ----------------------------------------- */
+  #mobileMenu {
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
+    padding: 25px 0;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: slideDown 0.25s ease-out;
+  }
+
+  #mobileMenu a,
+  #mobileMenu button {
+    color: #ffffff;
+    font-size: 1.15rem;
+    text-align: center;
+    border: none;
+    background: none;
+    padding: 6px 0;
+  }
+
+  #mobileMenu .cta.primary {
+    width: 80%;
+    margin: 10px auto 0;
+    padding: 12px 0;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+
+  /* -----------------------------------------
+     ✔ ABOUT PAGE MOBILE STACKING FIX
+     ----------------------------------------- */
+
+  /* Break the desktop grid */
+  .about-grid {
+    display: block !important;
+  }
+
+  /* Main about card full width */
+  .about-main {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  /* Side section (people + snapshot) full width */
+  .about-side {
+    width: 100%;
+  }
+
+  /* People building this: make items spaced nicely */
+  .team-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .team-list li span {
+    text-align: right;
+    opacity: 0.8;
+  }
+
+  /* Snapshot mobile formatting */
+  .snapshot-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .snap-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* Add spacing between sections */
+  .about-side .card {
+    margin-bottom: 25px;
+  }
+}
 
 
