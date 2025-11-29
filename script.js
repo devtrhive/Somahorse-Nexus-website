@@ -215,11 +215,21 @@
 })();
 document.querySelectorAll('.hero-ctas .cta').forEach(btn => {
   btn.addEventListener('click', () => {
-    const sectionId = btn.getAttribute('data-target');
-    const section = document.getElementById(sectionId);
+    const target = btn.getAttribute('data-target');
 
+    // Step 1 — Activate the tab/page
+    const page = document.querySelector(`.page#${target}`);
+    if (page) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      page.classList.add('active');
+    }
+
+    // Step 2 — Scroll to the section INSIDE the page
+    const section = document.getElementById(target);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }, 20);
     }
   });
 });
