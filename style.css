@@ -864,5 +864,53 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     margin-bottom: 25px;
   }
 }
+@media (max-width: 768px) {
+  /* highest priority so it overrides .mobile-menu */
+  #mobileMenu {
+    display: none !important;
+  }
+
+  #mobileMenu.open {
+    display: flex !important;
+  }
+}
+/* ------------------------
+   MOBILE NAVIGATION FIX
+   ------------------------ */
+@media (max-width: 768px) {
+
+  #hamburger { 
+    display: block !important; 
+  }
+
+  /* MENU CLOSED */
+  #mobileMenu {
+    display: none !important;
+    pointer-events: none;
+  }
+
+  /* MENU OPEN */
+  #mobileMenu.open {
+    display: flex !important;
+    pointer-events: auto;
+
+    background: rgba(0,0,0,0.92);
+    backdrop-filter: blur(10px);
+    padding: 25px 0;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    flex-direction: column;
+    gap: 20px;
+    animation: slideDown 0.25s ease-out;
+  }
+
+  #mobileMenu button {
+    color: #fff;
+    font-size: 1.15rem;
+    background: none;
+    border: none;
+    padding: 6px 0;
+  }
+}
 
 
