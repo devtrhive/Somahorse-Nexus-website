@@ -754,6 +754,30 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
 #mobileMenu {
   display: none;
 }
+@media (max-width: 768px) {
+  
+  .hamburger {
+    display: block !important;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+  }
+
+  /* Hide desktop nav on mobile */
+  .nav-list {
+    display: none !important;
+  }
+
+  /* Make sure mobile menu is under the header */
+  #mobileMenu {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+}
 
 /* OPEN when hamburger is toggled */
 #mobileMenu.open {
