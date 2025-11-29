@@ -213,7 +213,6 @@
     document.querySelector('.nav-btn[data-target="home"]').click();
   });
 })();
-<script>
 document.querySelectorAll('.hero-ctas .cta').forEach(btn => {
   btn.addEventListener('click', () => {
     const sectionId = btn.getAttribute('data-target');
@@ -224,5 +223,4 @@ document.querySelectorAll('.hero-ctas .cta').forEach(btn => {
     }
   });
 });
-</script>
 
