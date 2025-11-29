@@ -233,4 +233,32 @@ document.querySelectorAll('.hero-ctas .cta').forEach(btn => {
     }
   });
 });
+document.querySelectorAll('.hero-ctas .cta').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.getAttribute('data-target');
 
+    // 1 — Activate the correct page
+    const page = document.querySelector(`.page#${target}`);
+    if (page) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      page.classList.add('active');
+    }
+
+    // 2 — Update navbar active state
+    const navLinks = document.querySelectorAll('nav a[data-target]');
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('data-target') === target) {
+        link.classList.add('active');
+      }
+    });
+
+    // 3 — Scroll to the section inside the page
+    const section = document.getElementById(target);
+    if (section) {
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+    }
+  });
+});
