@@ -55,9 +55,19 @@ main{padding-top:92px;min-height:calc(100vh - 160px)}
 .page{display:none;padding:48px 0 80px}
 .page.active{display:block;animation:fadeIn .42s var(--easing)}
 
-/* HERO with background image */
-.hero-visual-bg{position:relative;background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=2000&q=60&auto=format&fit=crop');background-size:cover;background-position:center;border-bottom:1px solid rgba(0,0,0,0.04)}
+/* HERO with background image (desktop + mobile) */
+.hero-visual-bg{
+  position:relative;
+  background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=2000&q=60&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  border-bottom:1px solid rgba(0,0,0,0.04);
+}
+
+/* overlay kept so text is readable */
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,27,71,0.6),rgba(8,27,71,0.2))}
+
 /* hero grid content sits above overlay */
 .hero-grid{position:relative;display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:62px 0}
 .eyebrow{color:var(--light-blue);font-weight:700;font-size:13px;margin-bottom:10px}
@@ -129,6 +139,8 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
 
 /* animations */
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* Base responsive changes */
 @media(max-width:980px){
   .nav-list{display:none}
   .hamburger{display:inline-flex}
@@ -142,917 +154,132 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
   .logo-box{width:42px;height:42px}
   .visual-card{height:220px}
 }
-.logo img {
-    height: 50px;      /* adjust based on your preference */
-    width: auto;
-    display: block;
-}
-.cta {
-    display: inline-block;
-    padding: 14px 26px;
-    border-radius: 8px;
-    border: 2px solid #0047AB;   /* your blue */
-    color: #0047AB;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.25s ease;
-    text-decoration: none;
-    margin: 8px;
-}
 
-.cta:hover {
-    background: #0047AB;
-    color: #fff;
-    transform: translateY(-3px);
-}
-.feature-card {
-    background: #ffffff;
-    border: 1px solid #e5e5e5;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 15px 0;
-    cursor: pointer;
+/* CTA style */
+.logo img { height: 50px; width: auto; display: block; }
+.cta { display: inline-block; padding: 14px 26px; border-radius: 8px; border: 2px solid #0047AB; color: #0047AB; font-weight: 600; cursor: pointer; transition: 0.25s ease; text-decoration: none; margin: 8px; }
+.cta:hover { background: #0047AB; color: #fff; transform: translateY(-3px); }
 
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0px 10px 22px rgba(0, 71, 171, 0.28);
-    border-color: #0047AB;
-}
-.card-title {
-    font-weight: 700;     /* Bold */
-    font-size: 1.2rem;    /* Slightly bigger */
-    margin-bottom: 8px;
-    color: #111;          /* Professional dark text */
-}
-
-.card-desc {
-    font-weight: 400;
-    font-size: 0.95rem;
-    color: #444;          /* Softer grey for subtext */
-}
-.hero-subtext {
-    color: #ffffff;       /* Make text white */
-    font-size: 1.2rem;    /* Slightly bigger */
-    line-height: 1.6;     /* Better spacing */
-    max-width: 700px;     /* Nice readable width */
-}
-.hero-text-box {
-    background: #2244b481;     /* Same blue layout as AI • AFRICA */
-    color: white;                   
-    padding: 20px 26px;
-    border-radius: 14px;            /* smooth rounded corners */
-    display: inline-block;          /* fits tightly around text */
-    max-width: 800px;
-    font-weight: 500;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25); /* optional premium shadow */
-}
-.stats-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    justify-content: center;   /* centers the boxes horizontally */
-    align-items: center;       /* centers vertically, optional */
-    text-align: center;        /* makes text inside aligned nicely */
-}
-
-
-.stat-box {
-    background: #003f7f;     /* same blue layout */
-    color: white;
-    padding: 15px 19px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 1.4;
-    min-width: 220px;
-    text-align: center;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-}
-.stat-value {
-    font-size: 1.35rem;
-    font-weight: 700;
-    display: block;
-}
-
-.stat-label {
-    font-size: 0.9rem;
-    opacity: 0.9;
-}
-/* ------------------------------ */
-/*      ABOUT PAGE UPGRADED       */
-/* ------------------------------ */
-
-/* overall layout spacing */
-#about {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-/* grid layout */
-.about-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-}
-
-/* main left card */
-.about-main.card {
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 14px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-  border-left: 5px solid #014AAD;
-}
-
-.about-main h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 15px;
-  color: #0B1A33;
-}
-
-.about-main p {
-  font-size: 1.07rem;
-  margin-bottom: 18px;
-  line-height: 1.55;
-  color: #333;
-}
-
-/* subsection muted background */
-.section-muted {
-  background: #F3F6FA;
-  padding: 25px;
-  margin-top: 25px;
-  border-radius: 12px;
-  border-left: 4px solid #014AAD;
-}
-
-.section-muted h3 {
-  margin-bottom: 20px;
+/* ABOUT side title styling (team card title) */
+.about-side .card > h4 {
+  font-size: 1.4rem;
   font-weight: 700;
-  font-size: 1.3rem;
-  color: #0B1A33;
-}
-.about-side .card > h4 {
-  font-size: 1.6rem;     /* change size */
-  font-weight: 700;      /* bold */
-  margin-bottom: 15px;   /* spacing */
-  color: #0d6efd;        /* example color (blue) */
-  text-align: center;    /* center title */
-}
-.about-side .card > h4 {
-  font-size: 1.6rem;
-  padding-left: 10px;
-  border-left: 4px solid #0d6efd;
-  margin-bottom: 20px;
-}
-.about-side .card > h4 {
-  font-size: 1.6rem;
-  text-align: center;
-  border-bottom: 2px solid #0d6efd;
+  margin-bottom: 14px;
+  color: #0d6efd;
+  text-align: left;
   padding-bottom: 8px;
-  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(13,110,253,0.12);
 }
 
-/* --------------------------------------------- */
-/*        UPGRADED RIGHT COLUMN EXPERIENCE       */
-/* --------------------------------------------- */
-
-
-/* ------------------ */
-/*  TEAM MEMBERS      */
-/* ------------------ */
+/* TEAM section (clean, animated small cards) */
 .team-list {
   display: grid;
-  gap: 18px;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
 }
 
-@media (max-width: 768px) {
-
-  .team-list li {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start !important;   /* ✔ Bring name next to flag */
-    gap: 12px !important;                     /* ✔ spacing between flag + text */
-    padding: 12px 8px !important;
-  }
-
-  .member-info {
-    text-align: left !important;              /* ✔ prevent right shifting */
-  }
-
-}
-
-.flag-icon {
-  width: 30px !important;
-  height: 30px !important;
-  min-width: 30px !important;
-  min-height: 30px !important;
-  max-width: 30px !important;
-  max-height: 30px !important;
-
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  display: inline-block !important;
-
-  border: 1px solid #ccc !important;
-}
-
-.member-info strong {
-  display: block;
-  font-size: 1rem;
-  color: #0B1A33;
-}
-
-.member-info span {
-  font-size: 0.85rem;
-  color: #555;
-}
 .team-list li {
+  background: #ffffff;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border-left: 4px solid #014AAD;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   display: flex;
   align-items: center;
   gap: 12px;
+  transition: transform .22s ease, box-shadow .22s ease;
 }
 
-/* ------------------ */
-/*  SNAPSHOT CARDS    */
-/* ------------------ */
-
-.snapshot-grid {
-  display: grid;
-  gap: 18px;
-  margin-top: 15px;
-}
-
-/* Premium stat tile style */
-.snap-item {
-  padding: 18px;
-  border-radius: 14px;
-  background: linear-gradient(145deg, #EAF2FF, #F9FBFF);
-  border-left: 4px solid #014AAD;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-/* Hover glow */
-.snap-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
-}
-
-/* Title */
-.snap-item strong {
-  display: block;
-  font-weight: 700;
-  color: #014AAD;
-  font-size: 0.95rem;
-  margin-bottom: 3px;
-}
-
-/* Details */
-.snap-item span {
-  color: #222;
-  font-size: 0.92rem;
-}
-/* ============================
-   SERVICE CARDS (FINAL FIX)
-============================ */
-
-.service-card {
-  background: #fff;
-  border-radius: 16px;
-  border: 1px solid #e8e8e8;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  overflow: hidden;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-/* ---- IMAGE ---- */
-.service-img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  display: block;
-}
-
-/* ---- HEAD ---- */
-.card-head {
-  padding: 18px 20px 14px;
-}
-
-.card-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #0B1A33;
-  margin-bottom: 6px;
-}
-
-/* Details button */
-.toggle-open {
-  background: none;
-  border: none;
-  color: #014AAD;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 5px 0;
-}
-
-/* ---- BODY ---- */
-.card-body {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  padding: 0 20px;
-  transform: translateY(-8px);
-  transition: 
-    max-height .45s ease,
-    opacity .35s ease,
-    transform .35s ease;
-  border-top: 1px solid #eee;
-}
-
-.service-card.open .card-body {
-  max-height: 400px;
-  opacity: 1;
-  transform: translateY(0);
-  padding: 20px;
-}
-
-/* Close button */
-.close-card {
-  margin-top: 12px;
-  background: #014AAD;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-
-.close-card:hover {
-  background: #01306a;
-}
-
-/* REMOVE OLD BROKEN BEFORE IMAGE CODE */
-.service-card::before {
-  content: none !important;
-}
-
-
-
-/* =========================================================
-   MOBILE FIXES ONLY (max-width: 768px)
-   ========================================================= */
-@media (max-width: 768px) {
-
-  /* --------------------------
-     MOBILE MENU DESIGN
-     -------------------------- */
-  #mobileMenu {
-    background: rgba(0, 0, 0, 0.9); /* dark modern menu */
-    backdrop-filter: blur(8px);
-    padding: 20px 0;
-    border-radius: 0 0 16px 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    animation: fadeDown 0.25s ease-out;
-  }
-
-  #mobileMenu ul {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    text-align: center;
-    padding: 0;
-  }
-
-  #mobileMenu button,
-  #mobileMenu .mobile-link {
-    font-size: 1.1rem;
-    color: white;
-    background: none;
-    border: none;
-  }
-
-  #mobileMenu .cta.primary {
-    margin-top: 10px;
-    width: 80%;
-    align-self: center;
-  }
-
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-
-  /* --------------------------
-     ABOUT PAGE — MOBILE LAYOUT
-     -------------------------- */
-
-  .about-grid {
-    display: block !important; /* break the desktop grid */
-  }
-
-  .about-main {
-    width: 100%;
-    margin-bottom: 25px;
-  }
-
-  .about-side {
-    width: 100%;
-  }
-
-  .team-list li {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-  }
-  /* Mobile layout fix */
-@media (max-width: 768px) {
-  .team-member {
-    display: flex;
-    align-items: center;
-    gap: 12px; /* space between flag + text */
-  }
-
-  .team-flag {
-    flex-shrink:
-
-
-  .snapshot-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .sys-card {
-    margin-bottom: 16px;
-  }
-
-}
-/* =========================================================
-   MOBILE FIXES — BASED ON CURRENT HTML STRUCTURE
-   ========================================================= */
-@media (max-width: 768px) {
-
-  /* -----------------------------------------
-     ✔ MOBILE NAVIGATION DROPDOWN DESIGN
-     ----------------------------------------- */
- /* CLOSED by default */
-#mobileMenu {
-  display: none;
-}
-@media (max-width: 768px) {
-  
-  .hamburger {
-    display: block !important;
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: white;
-  }
-
-  /* Hide desktop nav on mobile */
-  .nav-list {
-    display: none !important;
-  }
-
-  /* Make sure mobile menu is under the header */
-  #mobileMenu {
-    position: absolute;
-    top: 65px;
-    left: 0;
-    right: 0;
-    z-index: 999;
-  }
-}
-
-/* OPEN when hamburger is toggled */
-#mobileMenu.open {
-  display: flex;
-  background: rgba(0, 0, 0, 0.92);
-  backdrop-filter: blur(10px);
-  padding: 25px 0;
-  border-radius: 0 0 18px 18px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-  flex-direction: column;
-  gap: 20px;
-  animation: slideDown 0.25s ease-out;
-}
-
-  #mobileMenu a,
-  #mobileMenu button {
-    color: #ffffff;
-    font-size: 1.15rem;
-    text-align: center;
-    border: none;
-    background: none;
-    padding: 6px 0;
-  }
-
-  #mobileMenu .cta.primary {
-    width: 80%;
-    margin: 10px auto 0;
-    padding: 12px 0;
-  }
-
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-15px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-
-  /* -----------------------------------------
-     ✔ ABOUT PAGE MOBILE STACKING FIX
-     ----------------------------------------- */
-
-  /* Break the desktop grid */
-  .about-grid {
-    display: block !important;
-  }
-
-  /* Main about card full width */
-  .about-main {
-    width: 100%;
-    margin-bottom: 25px;
-  }
-
-  /* Side section (people + snapshot) full width */
-  .about-side {
-    width: 100%;
-  }
-
-  /* People building this: make items spaced nicely */
-  .team-list li {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
-  }
-
-  .team-list li span {
-    text-align: right;
-    opacity: 0.8;
-  }
-
-  /* Snapshot mobile formatting */
-  .snapshot-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .snap-item {
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-  }
-
-  /* Add spacing between sections */
-  .about-side .card {
-    margin-bottom: 25px;
-  }
-}
-@media (max-width: 768px) {
-  /* highest priority so it overrides .mobile-menu */
-  #mobileMenu {
-    display: none !important;
-  }
-
-  #mobileMenu.open {
-    display: flex !important;
-  }
-}
-/* ------------------------
-   MOBILE NAVIGATION FIX
-   ------------------------ */
-@media (max-width: 768px) {
-
-  #hamburger { 
-    display: block !important; 
-  }
-
-  /* MENU CLOSED */
-  #mobileMenu {
-    display: none !important;
-    pointer-events: none;
-  }
-
-  /* MENU OPEN */
-  #mobileMenu.open {
-    display: flex !important;
-    pointer-events: auto;
-
-    background: rgba(0,0,0,0.92);
-    backdrop-filter: blur(10px);
-    padding: 25px 0;
-    border-radius: 0 0 18px 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-    flex-direction: column;
-    gap: 20px;
-    animation: slideDown 0.25s ease-out;
-  }
-
-  #mobileMenu button {
-    color: #fff;
-    font-size: 1.15rem;
-    background: none;
-    border: none;
-    padding: 6px 0;
-  }
-}
-.service-img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 14px 14px 0 0;
-  display: block;
-}
-.industry-card img,
-.industry-img {
-  display: block !important;
-  width: 100% !important;
-  height: 160px !important;
-  object-fit: cover !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  z-index: 2 !important;
-}
-[data-key="healthcare"] img {
-  opacity: 1 !important;
-  height: 160px !important;
-  display: block !important;
-}
-#join-talent .section-title {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-#join-talent .section-subtitle {
-  text-align: center;
-  color: #666;
-  max-width: 600px;
-  margin: 0 auto 30px;
-  font-size: 1rem;
-}
-
-.form-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-.btn-primary {
-  margin-top: 20px;
-  width: 100%;
-  padding: 12px;
-  border: none;
-  background: #012f6a;   /* FIXED */
-  color: #fff;
-  font-size: 1.1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.btn-primary:hover {
-  background: #001f4a;  /* darker shade on hover */
-}
-/* MOBILE FIX — make form 1-column */
-@media (max-width: 600px) {
-  .form-grid {
-    grid-template-columns: 1fr; /* Stack vertically */
-  }
-
-  .form-card {
-    padding: 18px;
-  }
-}
-/* MOBILE HAMBURGER COLOR */
-@media (max-width: 768px) {
-  #hamburger {
-    color: #012f6a !important;   /* deep blue */
-  }
-}
-@media (max-width: 768px) {
-  #hamburger {
-    background: #012f6a !important;
-    color: #fff !important;
-  }
-}
-
-  /* --- FINAL: Hamburger blue --- */
-  #hamburger {
-    background: transparent !important;
-    color: #0066ff !important;
-  }
-}
-/* ======================================================
-   MOBILE — FORCE WHITE THEME + FIX HERO + BLUE HAMBURGER
-   ====================================================== */
-@media (max-width: 768px) {
-
-  /* --- Make entire layout white --- */
-  body,
-  main,
-  section,
-  .page,
-  .container {
-    background: #ffffff !important;
-    color: #000 !important;
-  }
-
-  /* --- All cards and inner components become white --- */
-  .card,
-  .form-card,
-  .about-main,
-  .about-side .card,
-  .snapshot-grid .snap-item,
-  .team-list li {
-    background: #ffffff !important;
-    color: #000 !important;
-    border-color: #ddd !important;
-  }
-
-  /* --- HERO stays dark but shows the FULL image --- */
-  .hero-visual-bg {
-    height: 100vh !important;
-    background-size: cover !important;
-    background-position: center !important;
-  }
-
-  .hero-overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(0,0,0,0.6),
-      rgba(0,0,0,0.15)
-    ) !important;
-  }
-
-  /* --- MOBILE MENU FIX (remove dark mode override) --- */
-  #mobileMenu {
-    background: #ffffff !important;
-    backdrop-filter: none !important;
-  }
-
-  #mobileMenu button,
-  #mobileMenu a {
-    color: #000 !important;
-  }
-
-  /* --- Hamburger button becomes blue --- */
-  #hamburger {
-    color: #0066ff !important;
-  }
-
-  /* --- Make nav also white on mobile --- */
-  header.site-header {
-    background: #ffffff !important;
-    border-bottom: 1px solid #eee !important;
-  }
-}
-@media (max-width: 768px) {
-
-  body,
-  main,
-  section,
-  .page,
-  .container {
-    background: #ffffff !important;   /* ❌ THIS OVERRIDES HERO BACKGROUND */
-    color: #000 !important;
-  }
-/* ============================================
-   FIX HERO + STAT BOXES ON MOBILE
-   ============================================ */
-@media (max-width: 768px) {
-
-  /* Restore hero background */
-  .hero-visual-bg {
-    background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=2000&q=60&auto=format&fit=crop') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    height: auto !important;
-  }
-
-  /* Allow white background changes WITHOUT overwriting hero */
-  body,
-  main,
-  section:not(.hero-visual-bg),
-  .page,
-  .container {
-    background: #ffffff !important;
-    color: #000 !important;
-  }
-
-  /* Restore stat boxes */
-  .stat-box {
-    background: #003f7f !important;
-    color: white !important;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25) !important;
-  }
-
-  /* Fix home-highlights being removed */
-  .home-highlights li {
-    background: #ffffff;
-    border: 1px solid #e5e5e5;
-  }
-}
-/* -----------------------------------------------------
-   FIX HERO BACKGROUND IMAGE ON MOBILE
------------------------------------------------------- */
-@media (max-width: 768px) {
-  #home.hero-visual-bg,
-  .hero-visual-bg {
-    background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=2000&q=60&auto=format&fit=crop') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    min-height: 480px !important;  /* ensures it's visible */
-  }
-
-  /* Remove accidental white overlay */
-  .hero-overlay {
-    background: rgba(0,0,0,0.35) !important; 
-  }
-}
-/* -----------------------------------------------------
-   TEAM MEMBER CARDS (restored animated box style)
------------------------------------------------------- */
-.team-list {
-  display: grid;
-  gap: 18px;
-}
-
-.team-list li {
-  background: #ffffff;
-  padding: 16px 18px;
-  border-radius: 14px;
-  border-left: 4px solid #014AAD;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.team-list li:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-}
+.team-list li:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.10); }
 
 /* small circle flags */
 .flag-icon {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #e5e9f0;
+  border: 1px solid #e5e9f0;
+  flex-shrink: 0;
+  display: inline-block;
 }
 
 /* member text */
-.member-info strong {
-  display: block;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #0B1A33;
+.member-info strong { display: block; font-size: 1rem; font-weight: 600; color: #0B1A33; }
+.member-info span { font-size: 0.85rem; color: #555; }
+
+/* Service cards (images via <img>) */
+.service-card { background:#fff;border-radius:16px;border:1px solid #e8e8e8; box-shadow:0 4px 12px rgba(0,0,0,0.08); overflow:hidden; transition:transform .25s ease,box-shadow .25s ease; }
+.service-card:hover { transform:translateY(-6px); box-shadow:0 8px 20px rgba(0,0,0,0.12); }
+.service-img { width:100%; height:160px; object-fit:cover; display:block; }
+
+/* Card head & body */
+.card-head { padding: 16px 18px; }
+.card-title { font-size:1.15rem; font-weight:700; color:#0B1A33; margin-bottom:6px; }
+.toggle-open { background:none;border:0;color:#014AAD;font-weight:600;cursor:pointer;padding:5px 0; }
+.card-body { max-height:0; overflow:hidden; opacity:0; padding:0 18px; transform:translateY(-8px); transition:max-height .45s ease, opacity .35s ease, transform .35s ease; border-top:1px solid #eee; }
+.service-card.open .card-body { max-height:420px; opacity:1; transform:translateY(0); padding:18px; }
+
+/* Form & Join Talent */
+#join-talent .section-title { text-align:center; margin-bottom:10px; }
+#join-talent .section-subtitle { text-align:center; color:#666; max-width:600px; margin:0 auto 24px; font-size:1rem; }
+.form-card { background:#fff; padding:24px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.06); max-width:900px; margin:0 auto; }
+.form-grid { display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+.form-group { display:flex; flex-direction:column; }
+.form-group label { font-weight:600; margin-bottom:6px; }
+.form-group input, .form-group select, .form-group textarea { padding:10px; border-radius:8px; border:1px solid #ddd; font-size:1rem; }
+.btn-primary { margin-top:16px; width:100%; padding:12px; border:none; background:#012f6a; color:#fff; font-size:1.05rem; border-radius:8px; cursor:pointer; transition: background .2s ease; }
+.btn-primary:hover { background:#001f4a; }
+
+/* Utility: make form stack on small screens */
+@media (max-width: 600px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .form-card { padding:16px; }
 }
 
-.member-info span {
-  font-size: 0.85rem;
-  color: #555;
+/* Mobile specific tweaks (clean, specific, non-destructive) */
+@media (max-width: 768px) {
+
+  /* Header / hamburger */
+  .nav-list { display:none; }
+  .hamburger { display:inline-flex; font-size:22px; border:0; background:transparent; padding:8px; }
+  #hamburger { color: #0066ff !important; background: transparent !important; }
+
+  /* Ensure hero keeps its image and is visible */
+  .hero-visual-bg {
+    background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=2000&q=60&auto=format&fit=crop') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    min-height: 420px;
+    padding: 40px 0;
+  }
+
+  /* Keep overlay but slightly lighter so text visible on white pages */
+  .hero-overlay { background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.12)) !important; }
+
+  /* Make main layout white but don't override hero */
+  body, main, .page, .container { background: #ffffff; color: #000; }
+
+  /* Cards become white with subtle border */
+  .card, .form-card, .team-list li { background: #fff; border-color: #eee; }
+
+  /* Make team items tighter on mobile */
+  .team-list li { padding: 10px; gap: 10px; }
+  .flag-icon { width: 24px; height: 24px; }
+
+  /* Make home highlights / stat boxes visible */
+  .home-highlights { margin-top: 18px; }
+  .stat-box { background: #003f7f; color: #fff; padding: 12px 14px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+
+  /* Ensure service card image height is comfortable */
+  .service-img { height:140px; }
+
+  /* Ensure spacing & readability */
+  .hero-grid { padding: 36px 0; grid-template-columns: 1fr; }
+  h1, .hero-text-box { color: #fff; }
 }
+
+/* tiny final cleanup */
+a { color: var(--deep-blue); }
+button{ font-family: inherit; }
