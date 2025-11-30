@@ -893,39 +893,3 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     color: #fff !important;
   }
 }
-/* MOBILE ONLY – Make background WHITE instead of dark */
-@media (max-width: 768px) {
-  body,
-  .page,
-  main,
-  section {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
-
-  /* Make mobile menu white too */
-  #mobileMenu {
-    background: #ffffff !important;
-  }
-
-  #mobileMenu .mobile-link,
-  #mobileMenu .cta {
-    color: #000000 !important;
-  }
-
-  /* Fix hero text so it's readable on white */
-  .hero-text-box p,
-  .hero-left,
-  .hero-left h1,
-  .hero-left .eyebrow {
-    color: #000000 !important;
-  }
-
-  /* Remove dark overlays on mobile */
-  .hero-overlay,
-  .hero-visual-bg::before {
-    background: transparent !important;
-  }
-}
-
-
