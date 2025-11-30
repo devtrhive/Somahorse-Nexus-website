@@ -367,6 +367,11 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
   font-size: 0.85rem;
   color: #555;
 }
+.team-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
 /* ------------------ */
 /*  SNAPSHOT CARDS    */
