@@ -887,5 +887,11 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     color: #012f6a !important;   /* deep blue */
   }
 }
+@media (max-width: 768px) {
+  #hamburger {
+    background: #012f6a !important;
+    color: #fff !important;
+  }
+}
 
 
