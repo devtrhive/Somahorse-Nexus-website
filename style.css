@@ -331,15 +331,20 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
   gap: 18px;
 }
 
-.team-list li {
-  background: #F7F9FC;
-  padding: 16px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  border-left: 4px solid #014AAD;
+@media (max-width: 768px) {
+
+  .team-list li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start !important;   /* ✔ Bring name next to flag */
+    gap: 12px !important;                     /* ✔ spacing between flag + text */
+    padding: 12px 8px !important;
+  }
+
+  .member-info {
+    text-align: left !important;              /* ✔ prevent right shifting */
+  }
+
 }
 
 .flag-icon {
