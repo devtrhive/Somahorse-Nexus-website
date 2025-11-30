@@ -343,13 +343,12 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
 }
 
 .flag-icon {
-  width: 14px;          /* tiny but visible */
-  height: 14px;         /* tiny but visible */
-  border-radius: 50%;   /* perfect circle */
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
   object-fit: cover;
-  border: 1px solid #d0d4dc;  /* thin border so it doesn’t look huge */
+  border: 0.5px solid #d0d4dc;
 }
-
 
 .member-info strong {
   display: block;
