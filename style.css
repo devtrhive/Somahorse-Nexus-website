@@ -874,3 +874,67 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     color: #0066ff !important;
   }
 }
+/* ======================================================
+   MOBILE — FORCE WHITE THEME + FIX HERO + BLUE HAMBURGER
+   ====================================================== */
+@media (max-width: 768px) {
+
+  /* --- Make entire layout white --- */
+  body,
+  main,
+  section,
+  .page,
+  .container {
+    background: #ffffff !important;
+    color: #000 !important;
+  }
+
+  /* --- All cards and inner components become white --- */
+  .card,
+  .form-card,
+  .about-main,
+  .about-side .card,
+  .snapshot-grid .snap-item,
+  .team-list li {
+    background: #ffffff !important;
+    color: #000 !important;
+    border-color: #ddd !important;
+  }
+
+  /* --- HERO stays dark but shows the FULL image --- */
+  .hero-visual-bg {
+    height: 100vh !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0.6),
+      rgba(0,0,0,0.15)
+    ) !important;
+  }
+
+  /* --- MOBILE MENU FIX (remove dark mode override) --- */
+  #mobileMenu {
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+  }
+
+  #mobileMenu button,
+  #mobileMenu a {
+    color: #000 !important;
+  }
+
+  /* --- Hamburger button becomes blue --- */
+  #hamburger {
+    color: #0066ff !important;
+  }
+
+  /* --- Make nav also white on mobile --- */
+  header.site-header {
+    background: #ffffff !important;
+    border-bottom: 1px solid #eee !important;
+  }
+}
