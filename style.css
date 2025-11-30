@@ -893,3 +893,48 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     color: #fff !important;
   }
 }
+/* MOBILE THEME — Pages white, hero untouched */
+@media (max-width: 768px) {
+
+  /* Make all main page areas white */
+  body,
+  main,
+  .page,
+  section {
+    background-color: #ffffff !important;
+    color: #000 !important;
+  }
+
+  /* Keep hero exactly as it is (do NOT override hero styles) */
+  #home.hero,
+  #home .hero-visual-bg,
+  #home .hero-overlay {
+    background: inherit !important;
+  }
+
+  /* Ensure HERO IMAGE shows fully on mobile */
+  .hero-visual-bg {
+    background-size: cover !important;      /* ensures full image */
+    background-position: center center !important;
+    height: 100vh !important;               /* full screen hero */
+  }
+
+  /* Make body text readable on white backgrounds */
+  .page * {
+    color: #000 !important;
+  }
+
+  /* Navigation mobile menu turns white */
+  #mobileMenu {
+    background: #ffffff !important;
+  }
+
+  #mobileMenu .mobile-link {
+    color: #000 !important;
+  }
+
+  /* Blue hamburger */
+  #hamburger {
+    color: #0066ff !important;
+  }
+}
