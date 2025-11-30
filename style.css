@@ -946,3 +946,49 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     border-bottom: 1px solid #eee !important;
   }
 }
+@media (max-width: 768px) {
+
+  body,
+  main,
+  section,
+  .page,
+  .container {
+    background: #ffffff !important;   /* ❌ THIS OVERRIDES HERO BACKGROUND */
+    color: #000 !important;
+  }
+/* ============================================
+   FIX HERO + STAT BOXES ON MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+
+  /* Restore hero background */
+  .hero-visual-bg {
+    background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=2000&q=60&auto=format&fit=crop') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    height: auto !important;
+  }
+
+  /* Allow white background changes WITHOUT overwriting hero */
+  body,
+  main,
+  section:not(.hero-visual-bg),
+  .page,
+  .container {
+    background: #ffffff !important;
+    color: #000 !important;
+  }
+
+  /* Restore stat boxes */
+  .stat-box {
+    background: #003f7f !important;
+    color: white !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25) !important;
+  }
+
+  /* Fix home-highlights being removed */
+  .home-highlights li {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+  }
+}
