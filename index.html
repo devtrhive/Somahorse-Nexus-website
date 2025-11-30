@@ -408,29 +408,31 @@
 
          <form id="contactForm" action="https://formspree.io/f/mwpgkwny" method="POST">
 
+  <input type="hidden" name="_subject" value="New Contact Request from Somahorse Nexus">
+
   <div class="form-group">
     <label>Full Name</label>
-    <input type="text" name="Full Name" required>
+    <input type="text" name="full_name" required>
   </div>
 
   <div class="form-group">
     <label>Email Address</label>
-    <input type="email" name="Email" required>
+    <input type="email" name="email" required>
   </div>
 
   <div class="form-group">
     <label>Company / Organisation</label>
-    <input type="text" name="Company">
+    <input type="text" name="company">
   </div>
 
   <div class="form-group">
     <label>Project Type</label>
-    <input type="text" name="Project Type" placeholder="AI Solution, App Development, etc." required>
+    <input type="text" name="project_type" placeholder="AI Solution, App Development, etc." required>
   </div>
 
   <div class="form-group">
     <label>Project Details</label>
-    <textarea name="Project Details" rows="5" required></textarea>
+    <textarea name="project_details" rows="5" required></textarea>
   </div>
 
   <button class="btn-primary" type="submit">Send Request</button>
