@@ -992,3 +992,67 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     border: 1px solid #e5e5e5;
   }
 }
+/* -----------------------------------------------------
+   FIX HERO BACKGROUND IMAGE ON MOBILE
+------------------------------------------------------ */
+@media (max-width: 768px) {
+  #home.hero-visual-bg,
+  .hero-visual-bg {
+    background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=2000&q=60&auto=format&fit=crop') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    min-height: 480px !important;  /* ensures it's visible */
+  }
+
+  /* Remove accidental white overlay */
+  .hero-overlay {
+    background: rgba(0,0,0,0.35) !important; 
+  }
+}
+/* -----------------------------------------------------
+   TEAM MEMBER CARDS (restored animated box style)
+------------------------------------------------------ */
+.team-list {
+  display: grid;
+  gap: 18px;
+}
+
+.team-list li {
+  background: #ffffff;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border-left: 4px solid #014AAD;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.team-list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* small circle flags */
+.flag-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e5e9f0;
+}
+
+/* member text */
+.member-info strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0B1A33;
+}
+
+.member-info span {
+  font-size: 0.85rem;
+  color: #555;
+}
