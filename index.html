@@ -406,17 +406,36 @@
           <h2 id="contactHeading">Contact & Request Proposal</h2>
           <p class="lead">Tell us about your challenge and we’ll connect the right team.</p>
 
-          <form id="contactForm" class="contact-form" novalidate>
-            <label><span class="label">Full name</span><input name="name" type="text" placeholder="Your full name" required></label>
-            <label><span class="label">Company / Organisation</span><input name="company" type="text" placeholder="Company (optional)"></label>
-            <label><span class="label">Email</span><input name="email" type="email" placeholder="you@company.com" required></label>
-            <label><span class="label">Project brief</span><textarea name="message" rows="6" placeholder="Briefly describe the problem you want solved" required></textarea></label>
+         <form id="contactForm" action="https://formspree.io/f/YOUR_CONTACT_FORM_ID" method="POST">
 
-            <div class="form-actions">
-              <button class="cta primary" type="submit">Submit Request</button>
-              <button class="cta ghost" type="button" id="contactCancel">Cancel</button>
-            </div>
-          </form>
+  <div class="form-group">
+    <label>Full Name</label>
+    <input type="text" name="Full Name" required>
+  </div>
+
+  <div class="form-group">
+    <label>Email Address</label>
+    <input type="email" name="Email" required>
+  </div>
+
+  <div class="form-group">
+    <label>Company / Organisation</label>
+    <input type="text" name="Company">
+  </div>
+
+  <div class="form-group">
+    <label>Project Type</label>
+    <input type="text" name="Project Type" placeholder="AI Solution, App Development, etc." required>
+  </div>
+
+  <div class="form-group">
+    <label>Project Details</label>
+    <textarea name="Project Details" rows="5" required></textarea>
+  </div>
+
+  <button class="btn-primary" type="submit">Send Request</button>
+</form>
+
         </div>
 
         <aside class="contact-side">
