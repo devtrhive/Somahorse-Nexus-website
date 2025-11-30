@@ -856,31 +856,7 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
   }
 }
 /* MOBILE THEME — screen below 768px */
-@media (max-width: 768px) {
 
-  body,
-  .page,
-  main,
-  section {
-    background: #ffffff !important;
-    color: #000 !important;
-  }
-
-  .container {
-    background: #fff !important;
-  }
-
-  /* Make all cards white instead of dark */
-  .card {
-    background: #ffffff !important;
-    color: #000 !important;
-  }
-
-  /* Form cards white */
-  .form-card {
-    background: #ffffff !important;
-  }
-}
 /* MOBILE HAMBURGER COLOR */
 @media (max-width: 768px) {
   #hamburger {
@@ -919,67 +895,6 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     height: 100vh !important;               /* full screen hero */
   }
 
-  /* Make body text readable on white backgrounds */
-  .page * {
-    color: #000 !important;
-  }
-
-  /* Navigation mobile menu turns white */
-  #mobileMenu {
-    background: #ffffff !important;
-  }
-
-  #mobileMenu .mobile-link {
-    color: #000 !important;
-  }
-
-  /* Blue hamburger */
-  #hamburger {
-    color: #0066ff !important;
-  }
-}
-/* ================================
-   FINAL OVERRIDE — MOBILE THEME FIX
-   Put at VERY bottom of the CSS
-================================= */
-@media (max-width: 768px) {
-
-  /* --- Entire site white on mobile --- */
-  body, main, .page, section, .container {
-    background: #ffffff !important;
-    color: #000 !important;
-  }
-
-  /* --- Make all cards white --- */
-  .card, .form-card, .service-card, .snap-item, .sys-card {
-    background: #ffffff !important;
-    color: #000 !important;
-    border-color: #ddd !important;
-  }
-
-  /* --- HERO stays dark, untouched --- */
-  .hero-visual-bg {
-    background-size: cover !important;
-    background-position: center !important;
-    height: 100vh !important;
-  }
-
-  .hero-overlay {
-    background: linear-gradient(180deg,rgba(8,27,71,0.6),rgba(8,27,71,0.2)) !important;
-  }
-
-  /* --- FORCE mobile menu white --- */
-  #mobileMenu,
-  #mobileMenu.open {
-    background: #ffffff !important;
-    color: #000 !important;
-    backdrop-filter: none !important;
-  }
-
-  #mobileMenu a,
-  #mobileMenu button {
-    color: #000 !important;
-  }
 
   /* --- FINAL: Hamburger blue --- */
   #hamburger {
