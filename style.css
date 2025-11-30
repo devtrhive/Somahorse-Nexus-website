@@ -327,6 +327,7 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
 /*  TEAM MEMBERS      */
 /* ------------------ */
 
+/* TEAM LIST BASE LAYOUT */
 .team-list {
   display: grid;
   gap: 18px;
@@ -334,6 +335,7 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
   margin: 0;
 }
 
+/* TEAM CARD STYLE */
 .team-list li {
   background: #F7F9FC;
   padding: 16px 18px;
@@ -346,36 +348,35 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
   gap: 14px;
 }
 
-/* Hover animation */
+/* Hover effect */
 .team-list li:hover {
   transform: translateX(6px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* FLAG AVATAR CIRCLE */
-.team-list .flag {
-  font-size: 28px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ffffff;
+/* FLAG AVATAR CIRCLE (IMAGE FLAG) */
+.flag-icon {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(1, 74, 173, 0.2);
   box-shadow: 0 0 0 3px rgba(1,74,173,0.12);
-  margin-right: 6px;
 }
 
-/* Text styling */
+/* TEAM TEXT STYLING */
 .team-list strong {
   font-size: 1rem;
   color: #0B1A33;
+  display: block;
 }
 
 .team-list span {
   font-size: 0.88rem;
   color: #555;
+  display: block;
 }
+
 
 
 /* ------------------ */
