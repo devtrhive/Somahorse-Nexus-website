@@ -338,59 +338,49 @@
       <div class="container">
         <h2 id="talentHeading">Join as Talent</h2>
         <p class="lead">Join the Talent Foundry — be assessed, build real projects, and get matched to paid work.</p>
-<form id="talentForm" class="form-card">
+<form id="talentForm" action="https://formspree.io/f/xovgqwbr" method="POST" class="form-card">
 
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" name="name" required>
-        </div>
+  <div class="form-grid">
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" name="Full Name" required>
+    </div>
 
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" name="email" required>
-        </div>
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" name="Email" required>
+    </div>
 
-        <div class="form-group">
-          <label>Country</label>
-          <input type="text" name="country" required>
-        </div>
+    <div class="form-group">
+      <label>Country</label>
+      <input type="text" name="Country" required>
+    </div>
+  </div>
 
-        <div class="form-group">
-  <label>Primary Role</label>
-  <input type="text" name="role" placeholder="e.g. Software Engineer, DevOps, Product Designer" required>
-</div>
+  <div class="form-group">
+    <label>Your Desired Role</label>
+    <input type="text" name="Role" placeholder="Full-Stack Dev, AI Engineer, Designer…" required>
+  </div>
 
-      <div class="form-group">
-        <label>Your Skills (comma separated)</label>
-        <input type="text" name="skills" placeholder="React, Node.js, Python, Figma..." required>
-      </div>
+  <div class="form-group">
+    <label>Your Skills</label>
+    <input type="text" name="Skills" placeholder="React, Python, Figma, Node…" required>
+  </div>
 
-      <div class="form-group">
-        <label>Experience Level</label>
-        <select name="experience" required>
-          <option value="">Select level</option>
-          <option>Beginner</option>
-          <option>Intermediate</option>
-          <option>Advanced</option>
-          <option>Senior</option>
-        </select>
-      </div>
-
-      <div class="form-group">
+  <div class="form-group">
         <label>Linkedln profile</label>
         <input type="url" name="portfolio" placeholder="https://www.linkedin.com/in/yourname
 " required>
       </div>
 
-      <div class="form-group">
-        <label>Why do you want to join?</label>
-        <textarea name="message" rows="4" required></textarea>
-      </div>
+  <div class="form-group">
+    <label>Tell us about yourself</label>
+    <textarea name="About" rows="4" required></textarea>
+  </div>
 
-      <button type="submit" class="btn-primary">Submit Application</button>
+  <button class="btn-primary" type="submit">Submit Application</button>
+</form>
 
-    </form>
   </div>
 </section>
 
