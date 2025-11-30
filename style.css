@@ -855,5 +855,37 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     padding: 18px;
   }
 }
+/* MOBILE THEME — screen below 768px */
+@media (max-width: 768px) {
+
+  body,
+  .page,
+  main,
+  section {
+    background: #ffffff !important;
+    color: #000 !important;
+  }
+
+  .container {
+    background: #fff !important;
+  }
+
+  /* Make all cards white instead of dark */
+  .card {
+    background: #ffffff !important;
+    color: #000 !important;
+  }
+
+  /* Form cards white */
+  .form-card {
+    background: #ffffff !important;
+  }
+}
+/* MOBILE HAMBURGER COLOR */
+@media (max-width: 768px) {
+  #hamburger {
+    color: #012f6a !important;   /* deep blue */
+  }
+}
 
 
