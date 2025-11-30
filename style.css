@@ -571,6 +571,17 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     justify-content: space-between;
     padding: 10px 0;
   }
+  /* Mobile layout fix */
+@media (max-width: 768px) {
+  .team-member {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* space between flag + text */
+  }
+
+  .team-flag {
+    flex-shrink:
+
 
   .snapshot-grid {
     display: flex;
