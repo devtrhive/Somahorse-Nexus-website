@@ -326,72 +326,60 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
 /* ------------------ */
 /*  TEAM MEMBERS      */
 /* ------------------ */
-/* Team List Layout */
 .team-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: grid;
+  gap: 18px;
   padding: 0;
   margin: 0;
 }
 
-/* Each Team Card */
+/* Team card */
 .team-list li {
   background: #F7F9FC;
-  padding: 16px 18px;
+  padding: 14px 16px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   border-left: 4px solid #014AAD;
+  transition: transform .25s ease, box-shadow .25s ease;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 12px;
 }
 
-/* LEFT SIDE: Flag + Name */
-.team-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+/* Hover animation */
+.team-list li:hover {
+  transform: translateX(6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* Flag styling (small circle) */
-.flag-icon {
-  width: 26px;
-  height: 26px;
+/* Small round emoji avatar */
+.team-avatar {
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ddd;
-  margin-bottom: 6px;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #e3e8f0;
 }
 
-/* Name */
-.team-list strong {
+/* Name + role */
+.team-info strong {
   font-size: 1rem;
   color: #0B1A33;
+  display: block;
 }
 
-/* RIGHT SIDE: Role */
-.role {
-  font-size: 0.88rem;
+.team-info span {
+  font-size: 0.85rem;
   color: #555;
-  text-align: right;
-  white-space: nowrap;
+  display: block;
 }
-
-/* MOBILE FIX: stack vertically on small screens */
-@media (max-width: 480px) {
-  .team-list li {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .role {
-    text-align: left;
-  }
-}
-
-
 
 /* ------------------ */
 /*  SNAPSHOT CARDS    */
