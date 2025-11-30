@@ -343,16 +343,19 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
 }
 
 .flag-icon {
-  width: 10px !important;
-  height: 10px !important;
-  max-width: 10px !important;
-  max-height: 10px !important;
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px !important;
+  min-height: 14px !important;
+  max-width: 14px !important;
+  max-height: 14px !important;
+
   border-radius: 50% !important;
   object-fit: cover !important;
-  border: 1px solid #d0d4dc !important;
-  display: block !important;
-}
+  display: inline-block !important;
 
+  border: 1px solid #ccc !important;
+}
 
 .member-info strong {
   display: block;
