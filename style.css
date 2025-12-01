@@ -1139,3 +1139,63 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     margin-top: 20px;
   }
 }
+/* FIX HERO BACKGROUND ON MOBILE */
+@media(max-width: 768px) {
+  .hero-visual-bg,
+  #hero,
+  .hero {
+    background-image: url("YOUR-HERO-IMAGE.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+}
+/* TEAM DESIGN ON DESKTOP */
+@media(min-width: 769px) {
+  .team-list li {
+    background: #ffffff;
+    padding: 16px 18px;
+    border-radius: 14px;
+    border-left: 4px solid #014AAD;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .team-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+  }
+}
+/* JOIN AS TALENT DESKTOP FIX */
+@media(min-width: 769px) {
+  #talent .form-card {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    border: 1px solid #e4e7ec;
+  }
+
+  #talent .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* CONTACT DESKTOP FIX */
+@media(min-width: 769px) {
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+  }
+
+  .contact-main.card,
+  .contact-side .card {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+  }
+}
