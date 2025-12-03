@@ -99,33 +99,58 @@
 (function () {
   const industryCards = Array.from(document.querySelectorAll('.industry-card'));
 
-  const industryData = {
-    fintech: {
-      problem: 'Rising fraud, data complexity and pressure to automate.',
-      solutions: ['Fraud detection', 'Cashflow forecasting', 'Credit scoring'],
-      impact: 'Reduce manual fraud reviews by 60%+'
-    },
-    agriculture: {
-      problem: 'Low yields & lack of real-time farm intelligence.',
-      solutions: ['Yield prediction', 'Satellite monitoring', 'Smart irrigation'],
-      impact: 'Increase yields and reduce waste'
-    },
-    healthcare: {
-      problem: 'Fragmented data limiting quality of care.',
-      solutions: ['Diagnostics support', 'Automation', 'Equipment monitoring'],
-      impact: 'Better diagnostics, smoother workflows'
-    },
-    manufacturing: {
-      problem: 'Unplanned downtime & inefficiency.',
-      solutions: ['Predictive maintenance', 'Quality inspection', 'Optimisation'],
-      impact: 'Lower downtime + higher output'
-    },
-    education: {
-      problem: 'Personalization gaps in learning.',
-      solutions: ['Adaptive learning', 'Assessment automation', 'Recommendations'],
-      impact: 'Personalized learning at scale'
-    }
-  };
+ const industryData = {
+  fintech: {
+    problem: "Low financial inclusion, high fraud rates and fragmented payment systems.",
+    solutions: [
+      "AI credit scoring using mobile money data",
+      "Real-time fraud detection for digital payments",
+      "Unified payment gateways combining multiple payment methods"
+    ],
+    impact: "Safer transactions, better credit access, and streamlined payments across Africa."
+  },
+
+  agriculture: {
+    problem: "Low yields, weak market access and lack of real-time farm intelligence.",
+    solutions: [
+      "Precision farming platforms using satellite & sensor data",
+      "Mobile apps connecting farmers directly to buyers",
+      "Crop disease detection using phone cameras + AI"
+    ],
+    impact: "Higher yields, reduced losses, and direct market access for farmers."
+  },
+
+  education: {
+    problem: "Limited access to personalised learning and outdated school admin.",
+    solutions: [
+      "Adaptive learning platforms tailored to each student",
+      "Mobile-first apps for practical & vocational skills",
+      "School management systems for admin automation"
+    ],
+    impact: "Better learning outcomes and reduced admin load for schools."
+  },
+
+  healthcare: {
+    problem: "Limited access to medical expertise, poor diagnostic capacity and medication shortages.",
+    solutions: [
+      "Telemedicine platforms for remote consultations",
+      "AI diagnostic tools for medical imaging",
+      "Drug inventory tracking systems for clinics"
+    ],
+    impact: "Earlier diagnosis, wider access to care, and reduced stock-outs."
+  },
+
+  manufacturing: {
+    problem: "Unplanned downtime, slow production and poor supply chain visibility.",
+    solutions: [
+      "Production monitoring systems using IoT sensors",
+      "Predictive maintenance tools for factory equipment",
+      "Supply chain tracking platforms from factory to customer"
+    ],
+    impact: "Higher output, fewer breakdowns, and full supply chain transparency."
+  }
+};
+
 
   function closeAllInline() {
     industryCards.forEach(card => {
