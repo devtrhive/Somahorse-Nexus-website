@@ -1163,33 +1163,187 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     box-shadow: 0 10px 22px rgba(0,0,0,0.15);
   }
 }
-/* JOIN AS TALENT DESKTOP FIX */
-@media(min-width: 769px) {
-  #talent .form-card {
-    background: white;
-    padding: 32px;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
-    border: 1px solid #e4e7ec;
+/* ===========================================================
+   JOIN AS TALENT – Desktop + Mobile FIX
+=========================================================== */
+
+#talent {
+  padding: 80px 0;
+}
+
+#talent .container {
+  max-width: 900px;
+  margin: auto;
+}
+
+#talent h2 {
+  font-size: 2rem;
+  color: #0B1A33;
+  margin-bottom: 10px;
+}
+
+#talent .lead {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Unique form wrapper for Talent */
+#talentForm.form-card {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+  border: 1px solid #e4e7ec;
+}
+
+/* Desktop grid */
+#talentForm .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+#talentForm .form-group {
+  margin-bottom: 18px;
+}
+
+#talentForm .form-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #0B1A33;
+}
+
+#talentForm input,
+#talentForm select,
+#talentForm textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  background: #F9FBFD;
+  transition: 0.2s ease;
+}
+
+#talentForm input:focus,
+#talentForm select:focus,
+#talentForm textarea:focus {
+  border-color: #014AAD;
+  background: white;
+}
+
+/* Submit button */
+#talentForm .btn-primary {
+  padding: 14px 20px;
+  background: #014AAD;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#talentForm .btn-primary:hover {
+  background: #013a84;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  #talentForm .form-grid {
+    grid-template-columns: 1fr;
   }
 
-  #talent .form-grid {
-    grid-template-columns: 1fr 1fr;
+  #talentForm.form-card {
+    padding: 22px;
   }
 }
-/* CONTACT DESKTOP FIX */
-@media(min-width: 769px) {
+
+
+/* ===========================================================
+   CONTACT SECTION – Desktop + Mobile FIX
+=========================================================== */
+
+#contact {
+  padding: 80px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.contact-main.card {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+}
+
+.contact-main h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #0B1A33;
+}
+
+.contact-main .lead {
+  margin-bottom: 25px;
+}
+
+/* Contact form inputs */
+#contactForm .form-group {
+  margin-bottom: 18px;
+}
+
+#contactForm .form-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #F9FBFD;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  border-color: #014AAD;
+  background: white;
+}
+
+#contactForm .btn-primary {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Contact sidebar */
+.contact-side .card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+}
+
+.contact-side a {
+  color: #014AAD;
+  font-weight: 600;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
   .contact-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr;
   }
 
-  .contact-main.card,
   .contact-side .card {
-    background: white;
-    padding: 32px;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    margin-top: 20px;
   }
 }
