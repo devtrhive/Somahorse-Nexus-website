@@ -1351,3 +1351,72 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     margin-top: 20px;
   }
 }
+/* ============================
+   DESKTOP FORM FIX — OPTION A
+   Makes Join Talent + Contact
+   match mobile design but wider
+   ============================ */
+@media (min-width: 769px) {
+
+  /* Form wrapper / card */
+  .form-card,
+  .contact-main,
+  .card {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 32px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+
+  /* Form title alignment */
+  .form-card h2,
+  .contact-main h2 {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  /* Input groups spacing */
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  /* Inputs */
+  .form-group input,
+  .form-group textarea,
+  .form-card input,
+  .form-card textarea,
+  .contact-main input,
+  .contact-main textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  /* Desktop 2-column layout ONLY where needed */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  /* Ensure textarea stays full-width */
+  textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  /* Buttons */
+  .form-card .btn-primary,
+  .contact-main .btn-primary,
+  button.btn-primary {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+  }
+}
