@@ -201,89 +201,63 @@
     });
   });
 })();
-/* ================== CONTACT FORM ================== */
+/* ================== FORMS → WEB3FORMS + TOAST ================== */
 (function () {
-  const form = document.getElementById('contactForm');
-  const toast = document.getElementById('toast');
+  const talentForm  = document.getElementById('talentForm');
+  const contactForm = document.querySelector('#contact form'); // uses your existing HTML
+  const toast       = document.getElementById('toast');
 
-  function showToast(msg) {
+  function showToast(message, type = 'success') {
     if (!toast) {
-      alert(msg);
+      alert(message);
       return;
     }
-    toast.textContent = msg;
-    toast.style.display = "block";
-    setTimeout(() => { toast.style.display = "none"; }, 3500);
+
+    toast.textContent = message;
+    toast.style.display = 'block';
+    toast.style.background =
+      type === 'success'
+        ? 'rgba(22,163,74,0.95)'   // green-ish
+        : 'rgba(220,38,38,0.95)';  // red-ish
+
+    setTimeout(() => {
+      toast.style.display = 'none';
+    }, 4000);
   }
 
-  if (form) {
-    form.addEventListener("submit", async (e) => {
+  function wireForm(form) {
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Use your real field names
-      const fullName = form.elements["full_name"].value.trim();
-      const email = form.elements["email"].value.trim();
-      const details = form.elements["project_details"].value.trim();
-
-      if (!fullName || !email || !details) {
-        showToast("Please fill in all required fields.");
+      // Let browser do built‑in validation (required, email, etc.)
+      if (!form.checkValidity()) {
+        form.reportValidity();
         return;
       }
 
       const formData = new FormData(form);
 
       try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: formData
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
         });
 
-        if (response.ok) {
-          showToast("Your request has been received!");
+        if (res.ok) {
+          showToast('Thank you for your submission. We will be in touch soon.', 'success');
           form.reset();
-          // Optional: go back to home tab
-          const homeBtn = document.querySelector('.nav-btn[data-target="home"]');
-          if (homeBtn) homeBtn.click();
         } else {
-          showToast("Something went wrong. Please try again.");
+          showToast('Something went wrong. Please try again.', 'error');
         }
       } catch (err) {
-        showToast("Network error. Please try again.");
+        showToast('Network error. Please try again later.', 'error');
       }
     });
   }
 
-  const cancel = document.getElementById("contactCancel");
-  if (cancel) cancel.addEventListener("click", () => {
-    document.querySelector('.nav-btn[data-target="home"]').click();
-  });
+  wireForm(talentForm);
+  wireForm(contactForm);
 })();
-document.querySelectorAll('.hero-ctas .cta').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const target = btn.getAttribute('data-target');
-
-    // 1 — Switch tabs/pages
-    const page = document.querySelector(`.page#${target}`);
-    if (page) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      page.classList.add('active');
-    }
-
-    // 2 — Highlight correct navbar button
-    const navButtons = document.querySelectorAll('.nav-btn');
-    navButtons.forEach(nav => {
-      nav.classList.remove('active');
-      if (nav.getAttribute('data-target') === target) {
-        nav.classList.add('active');
-      }
-    });
-
-    // 3 — Smooth scroll inside page
-    const section = document.getElementById(target);
-    if (section) {
-      setTimeout(() => {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }, 30);
-    }
-  });
-});
