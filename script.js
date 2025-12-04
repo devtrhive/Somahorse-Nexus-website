@@ -42,7 +42,14 @@
     requestDesktop.addEventListener('click', () => showPage('contact'));
   if (requestMobile)
     requestMobile.addEventListener('click', () => showPage('contact'));
-
+  // Hero CTA buttons on the home hero
+  const heroCtas = document.querySelectorAll('.hero-ctas .cta');
+  heroCtas.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-target');
+      if (target) showPage(target);
+    });
+  });
   showPage('home');
 })();
 
