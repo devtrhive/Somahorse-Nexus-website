@@ -574,17 +574,17 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     justify-content: space-between;
     padding: 10px 0;
   }
-  /* Mobile layout fix */
+/* Mobile layout fix */
 @media (max-width: 768px) {
   .team-member {
     display: flex;
     align-items: center;
-    gap: 12px; /* space between flag + text */
+    gap: 12px;
   }
 
   .team-flag {
-    flex-shrink:
-
+    flex-shrink: 0;
+  }
 
   .snapshot-grid {
     display: flex;
@@ -595,7 +595,6 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
   .sys-card {
     margin-bottom: 16px;
   }
-
 }
 /* =========================================================
    MOBILE FIXES — BASED ON CURRENT HTML STRUCTURE
