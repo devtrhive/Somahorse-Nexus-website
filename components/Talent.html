@@ -1,17 +1,17 @@
 <!-- TALENT -->
-<section id="talent" class="page py-24 bg-gradient-to-b from-dark via-deep-blue to-dark relative overflow-hidden" aria-labelledby="talentHeading">
+<section id="talent" class="page py-24 bg-white relative overflow-hidden" aria-labelledby="talentHeading">
   <!-- Background Pattern -->
-  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.02"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23000000" fill-opacity="0.02"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
   
   <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
-      <h2 id="talentHeading" class="text-5xl lg:text-6xl font-black text-white mb-6">
-        <span class="bg-gradient-to-r from-primary-blue via-light-blue to-primary-blue bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
+      <h2 id="talentHeading" class="text-5xl lg:text-6xl font-black text-slate-900 mb-6">
+        <span class="bg-gradient-to-r from-primary via-primary-light to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
           Join as Talent
         </span>
       </h2>
-      <p class="text-xl text-gray-300 mb-4">Join the Talent Foundry — be assessed, build real projects, and get matched to paid work.</p>
-      <div class="h-1 w-24 bg-gradient-to-r from-primary-blue to-light-blue mx-auto rounded-full"></div>
+      <p class="text-xl text-slate-600 mb-4">Join the Talent Foundry — be assessed, build real projects, and get matched to paid work.</p>
+      <div class="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
     </div>
     
     <form id="talentForm" action="https://api.web3forms.com/submit" method="POST" class="relative group">
@@ -19,7 +19,7 @@
       <div class="absolute -inset-1 bg-gradient-to-r from-primary-blue/50 to-light-blue/50 rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
       
       <!-- Form Card -->
-      <div class="relative bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl p-10 lg:p-12 rounded-3xl border border-white/10 shadow-2xl">
+        <div class="relative bg-white p-10 lg:p-12 rounded-3xl border border-slate-200 shadow-lg">
         <!-- Web3Forms: required + helpful hidden fields -->
         <input type="hidden" name="access_key" value="983ad1e3-3d9a-437d-90b2-44dd2ae100c4">
         <input type="hidden" name="subject" value="New Talent Application">
@@ -28,28 +28,28 @@
 
         <div class="grid md:grid-cols-2 gap-6 mb-6">
           <div class="form-group">
-            <label class="block text-sm font-semibold text-gray-300 mb-3">Full Name</label>
-            <input type="text" name="full_name" required class="w-full px-5 py-4 bg-dark/50 border border-white/10 rounded-xl focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-all text-white placeholder-gray-500 backdrop-blur-sm">
+            <label class="block text-sm font-semibold text-slate-700 mb-3">Full Name</label>
+            <input type="text" name="full_name" required class="w-full px-5 py-4 bg-slate-50 border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all text-slate-900 placeholder-slate-500">
           </div>
 
           <div class="form-group">
-            <label class="block text-sm font-semibold text-gray-300 mb-3">Email Address</label>
+            <label class="block text-sm font-semibold text-slate-700 mb-3">Email Address</label>
             <input type="email" name="email" required class="w-full px-5 py-4 bg-dark/50 border border-white/10 rounded-xl focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-all text-white placeholder-gray-500 backdrop-blur-sm">
           </div>
 
           <div class="form-group">
-            <label class="block text-sm font-semibold text-gray-300 mb-3">Country</label>
+            <label class="block text-sm font-semibold text-slate-700 mb-3">Country</label>
             <input type="text" name="country" required class="w-full px-5 py-4 bg-dark/50 border border-white/10 rounded-xl focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-all text-white placeholder-gray-500 backdrop-blur-sm">
           </div>
 
           <div class="form-group">
-            <label class="block text-sm font-semibold text-gray-300 mb-3">Experience Level</label>
-            <select name="experience" required class="w-full px-5 py-4 bg-dark/50 border border-white/10 rounded-xl focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-all text-white backdrop-blur-sm">
-              <option value="" class="bg-dark">Select your experience</option>
-              <option value="Junior" class="bg-dark">Junior</option>
-              <option value="Intermediate" class="bg-dark">Intermediate</option>
-              <option value="Senior" class="bg-dark">Senior</option>
-              <option value="Advanced" class="bg-dark">Advanced</option>
+            <label class="block text-sm font-semibold text-slate-700 mb-3">Experience Level</label>
+            <select name="experience" required class="w-full px-5 py-4 bg-slate-50 border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all text-slate-900">
+              <option value="">Select your experience</option>
+              <option value="Junior">Junior</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Senior">Senior</option>
+              <option value="Advanced">Advanced</option>
             </select>
           </div>
         </div>
@@ -71,10 +71,10 @@
 
         <div class="form-group mb-8">
           <label class="block text-sm font-semibold text-gray-300 mb-3">Tell us about yourself</label>
-          <textarea name="about" rows="5" required class="w-full px-5 py-4 bg-dark/50 border border-white/10 rounded-xl focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-all text-white placeholder-gray-500 resize-y backdrop-blur-sm"></textarea>
+          <textarea name="about" rows="5" required class="w-full px-5 py-4 bg-slate-50 border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all text-slate-900 placeholder-slate-500 resize-y"></textarea>
         </div>
 
-        <button class="btn-primary w-full px-8 py-5 bg-gradient-to-r from-primary-blue to-light-blue hover:from-light-blue hover:to-primary-blue text-dark font-bold rounded-xl shadow-2xl hover:shadow-primary-blue/50 transition-all transform hover:-translate-y-1 hover:scale-105" type="submit">
+        <button class="btn-primary w-full px-8 py-5 bg-gradient-to-r from-primary to-primary-light hover:from-primary-light hover:to-primary text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:shadow-primary/30 transition-all transform hover:-translate-y-1 hover:scale-105" type="submit">
           Submit Application
         </button>
       </div>

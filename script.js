@@ -191,15 +191,15 @@
 
       inline.innerHTML = `
         <div class="space-y-5 py-2">
-          <p class="text-gray-200 leading-relaxed"><strong class="text-primary-blue font-bold">Problem:</strong> ${info.problem}</p>
+          <p class="text-slate-700 leading-relaxed"><strong class="text-primary font-bold">Problem:</strong> ${info.problem}</p>
           <div>
-            <p class="text-gray-200 mb-3 font-semibold"><strong class="text-primary-blue">Solutions:</strong></p>
-            <ul class="list-disc pl-6 space-y-2 text-gray-300">${info.solutions.map(s => `<li class="leading-relaxed">${s}</li>`).join('')}</ul>
+            <p class="text-slate-700 mb-3 font-semibold"><strong class="text-primary">Solutions:</strong></p>
+            <ul class="list-disc pl-6 space-y-2 text-slate-600">${info.solutions.map(s => `<li class="leading-relaxed">${s}</li>`).join('')}</ul>
           </div>
-          <p class="text-gray-200 leading-relaxed"><strong class="text-primary-blue font-bold">Impact:</strong> ${info.impact}</p>
+          <p class="text-slate-700 leading-relaxed"><strong class="text-primary font-bold">Impact:</strong> ${info.impact}</p>
           <div class="flex flex-wrap gap-3 pt-4">
-            <button class="cta primary inline-contact px-6 py-3 bg-gradient-to-r from-primary-blue to-light-blue hover:from-light-blue hover:to-primary-blue text-dark font-bold rounded-xl transition-all transform hover:-translate-y-1 shadow-lg">Request Proposal</button>
-            <button class="cta ghost inline-close px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/20 transition-all">Close</button>
+            <button class="cta primary inline-contact px-6 py-3 bg-gradient-to-r from-primary to-primary-light hover:from-primary-light hover:to-primary text-white font-bold rounded-xl transition-all transform hover:-translate-y-1 shadow-lg">Request Proposal</button>
+            <button class="cta ghost inline-close px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl border border-slate-300 transition-all">Close</button>
           </div>
         </div>
       `;
