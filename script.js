@@ -1,18 +1,17 @@
 /* ================== SPA NAVIGATION ================== */
 (function () {
-  const navBtns = Array.from(document.querySelectorAll('.nav-btn'));
-  const pages = Array.from(document.querySelectorAll('.page'));
-  const mobileLinks = Array.from(document.querySelectorAll('.mobile-link'));
-  const mobileMenu = document.getElementById('mobileMenu');
-  const hamburger = document.getElementById('hamburger');
+  const navBtns        = Array.from(document.querySelectorAll('.nav-btn'));
+  const pages          = Array.from(document.querySelectorAll('.page'));
+  const mobileLinks    = Array.from(document.querySelectorAll('.mobile-link'));
+  const mobileMenu     = document.getElementById('mobileMenu');
+  const hamburger      = document.getElementById('hamburger');
   const requestDesktop = document.getElementById('requestProposalDesktop');
-  const requestMobile = document.getElementById('requestProposalMobile');
+  const requestMobile  = document.getElementById('requestProposalMobile');
 
   function showPage(id) {
     pages.forEach(p => p.classList.toggle('active', p.id === id));
     navBtns.forEach(b => b.classList.toggle('active', b.dataset.target === id));
 
-    // Close mobile menu
     if (mobileMenu) {
       mobileMenu.classList.remove("open");
       mobileMenu.setAttribute('aria-hidden', 'true');
@@ -22,18 +21,15 @@
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  // Desktop navbar
   navBtns.forEach(btn =>
     btn.addEventListener('click', () => showPage(btn.dataset.target))
   );
 
-  // Mobile navbar links
   mobileLinks.forEach(ml =>
     ml.addEventListener('click', () => showPage(ml.dataset.target))
   );
 
-  // Hamburger toggle
-  if (hamburger) {
+  if (hamburger && mobileMenu) {
     hamburger.addEventListener("click", () => {
       const expanded = hamburger.getAttribute("aria-expanded") === "true";
       hamburger.setAttribute("aria-expanded", String(!expanded));
@@ -42,7 +38,6 @@
     });
   }
 
-  // Request proposal buttons
   if (requestDesktop)
     requestDesktop.addEventListener('click', () => showPage('contact'));
   if (requestMobile)
@@ -50,7 +45,6 @@
 
   showPage('home');
 })();
-
 
 /* ================== SERVICES ACCORDION ================== */
 (function () {
@@ -60,16 +54,19 @@
     serviceCards.forEach(card => {
       if (card !== except) {
         card.classList.remove("open");
-        card.querySelector(".card-body").classList.remove("open");
+        const body = card.querySelector(".card-body");
+        if (body) body.classList.remove("open");
         card.style.opacity = "1";
       }
     });
   }
 
   serviceCards.forEach(card => {
-    const toggle = card.querySelector('.toggle-open');
-    const body = card.querySelector('.card-body');
+    const toggle   = card.querySelector('.toggle-open');
+    const body     = card.querySelector('.card-body');
     const closeBtn = card.querySelector('.close-card');
+
+    if (!toggle || !body || !closeBtn) return;
 
     toggle.addEventListener('click', () => {
       const isOpen = card.classList.contains("open");
@@ -94,75 +91,71 @@
   });
 })();
 
-
 /* ================== INDUSTRIES INLINE ================== */
 (function () {
   const industryCards = Array.from(document.querySelectorAll('.industry-card'));
 
- const industryData = {
-  fintech: {
-    problem: "Low financial inclusion, high fraud rates and fragmented payment systems.",
-    solutions: [
-      "AI credit scoring using mobile money data",
-      "Real-time fraud detection for digital payments",
-      "Unified payment gateways combining multiple payment methods"
-    ],
-    impact: "Safer transactions, better credit access, and streamlined payments across Africa."
-  },
-
-  agriculture: {
-    problem: "Low yields, weak market access and lack of real-time farm intelligence.",
-    solutions: [
-      "Precision farming platforms using satellite & sensor data",
-      "Mobile apps connecting farmers directly to buyers",
-      "Crop disease detection using phone cameras + AI"
-    ],
-    impact: "Higher yields, reduced losses, and direct market access for farmers."
-  },
-
-  education: {
-    problem: "Limited access to personalised learning and outdated school admin.",
-    solutions: [
-      "Adaptive learning platforms tailored to each student",
-      "Mobile-first apps for practical & vocational skills",
-      "School management systems for admin automation"
-    ],
-    impact: "Better learning outcomes and reduced admin load for schools."
-  },
-
-  healthcare: {
-    problem: "Limited access to medical expertise, poor diagnostic capacity and medication shortages.",
-    solutions: [
-      "Telemedicine platforms for remote consultations",
-      "AI diagnostic tools for medical imaging",
-      "Drug inventory tracking systems for clinics"
-    ],
-    impact: "Earlier diagnosis, wider access to care, and reduced stock-outs."
-  },
-
-  manufacturing: {
-    problem: "Unplanned downtime, slow production and poor supply chain visibility.",
-    solutions: [
-      "Production monitoring systems using IoT sensors",
-      "Predictive maintenance tools for factory equipment",
-      "Supply chain tracking platforms from factory to customer"
-    ],
-    impact: "Higher output, fewer breakdowns, and full supply chain transparency."
-  }
-};
-
+  const industryData = {
+    fintech: {
+      problem: "Low financial inclusion, high fraud rates and fragmented payment systems.",
+      solutions: [
+        "AI credit scoring using mobile money data",
+        "Real-time fraud detection for digital payments",
+        "Unified payment gateways combining multiple payment methods"
+      ],
+      impact: "Safer transactions, better credit access, and streamlined payments across Africa."
+    },
+    agriculture: {
+      problem: "Low yields, weak market access and lack of real-time farm intelligence.",
+      solutions: [
+        "Precision farming platforms using satellite & sensor data",
+        "Mobile apps connecting farmers directly to buyers",
+        "Crop disease detection using phone cameras + AI"
+      ],
+      impact: "Higher yields, reduced losses, and direct market access for farmers."
+    },
+    education: {
+      problem: "Limited access to personalised learning and outdated school admin.",
+      solutions: [
+        "Adaptive learning platforms tailored to each student",
+        "Mobile-first apps for practical & vocational skills",
+        "School management systems for admin automation"
+      ],
+      impact: "Better learning outcomes and reduced admin load for schools."
+    },
+    healthcare: {
+      problem: "Limited access to medical expertise, poor diagnostic capacity and medication shortages.",
+      solutions: [
+        "Telemedicine platforms for remote consultations",
+        "AI diagnostic tools for medical imaging",
+        "Drug inventory tracking systems for clinics"
+      ],
+      impact: "Earlier diagnosis, wider access to care, and reduced stock-outs."
+    },
+    manufacturing: {
+      problem: "Unplanned downtime, slow production and poor supply chain visibility.",
+      solutions: [
+        "Production monitoring systems using IoT sensors",
+        "Predictive maintenance tools for factory equipment",
+        "Supply chain tracking platforms from factory to customer"
+      ],
+      impact: "Higher output, fewer breakdowns, and full supply chain transparency."
+    }
+  };
 
   function closeAllInline() {
     industryCards.forEach(card => {
       const body = card.querySelector('.inline-body');
+      if (!body) return;
       body.classList.remove("open");
       body.setAttribute("aria-hidden", "true");
     });
   }
 
   industryCards.forEach(card => {
-    const key = card.dataset.key;
+    const key    = card.dataset.key;
     const inline = card.querySelector('.inline-body');
+    if (!key || !inline) return;
 
     card.addEventListener('click', (e) => {
       if (e.target.closest('.inline-body')) return;
@@ -176,6 +169,8 @@
       }
 
       const info = industryData[key];
+      if (!info) return;
+
       inline.innerHTML = `
         <p><strong>Problem:</strong> ${info.problem}</p>
         <p><strong>Solutions:</strong></p>
@@ -196,15 +191,17 @@
       });
 
       inline.querySelector(".inline-contact").addEventListener("click", () => {
-        document.querySelector('.nav-btn[data-target="contact"]').click();
+        const contactBtn = document.querySelector('.nav-btn[data-target="contact"]');
+        if (contactBtn) contactBtn.click();
       });
     });
   });
 })();
+
 /* ================== FORMS → WEB3FORMS + TOAST ================== */
 (function () {
   const talentForm  = document.getElementById('talentForm');
-  const contactForm = document.querySelector('#contact form'); // uses your existing HTML
+  const contactForm = document.getElementById('contactForm');
   const toast       = document.getElementById('toast');
 
   function showToast(message, type = 'success') {
@@ -217,8 +214,8 @@
     toast.style.display = 'block';
     toast.style.background =
       type === 'success'
-        ? 'rgba(22,163,74,0.95)'   // green-ish
-        : 'rgba(220,38,38,0.95)';  // red-ish
+        ? 'rgba(22,163,74,0.95)'
+        : 'rgba(220,38,38,0.95)';
 
     setTimeout(() => {
       toast.style.display = 'none';
@@ -231,7 +228,6 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Let browser do built‑in validation (required, email, etc.)
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
@@ -261,3 +257,31 @@
   wireForm(talentForm);
   wireForm(contactForm);
 })();
+
+/* ================== HERO CTA SWITCHING ================== */
+document.querySelectorAll('.hero-ctas .cta').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.getAttribute('data-target');
+
+    const page = document.querySelector(`.page#${target}`);
+    if (page) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      page.classList.add('active');
+    }
+
+    const navButtons = document.querySelectorAll('.nav-btn');
+    navButtons.forEach(nav => {
+      nav.classList.remove('active');
+      if (nav.getAttribute('data-target') === target) {
+        nav.classList.add('active');
+      }
+    });
+
+    const section = document.getElementById(target);
+    if (section) {
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }, 30);
+    }
+  });
+});
