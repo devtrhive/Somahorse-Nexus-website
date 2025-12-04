@@ -201,7 +201,63 @@
     });
   });
 })();
+/* ================== CONTACT FORM ================== */
+(function () {
+  const form = document.getElementById('contactForm');
+  const toast = document.getElementById('toast');
 
+  function showToast(msg) {
+    if (!toast) {
+      alert(msg);
+      return;
+    }
+    toast.textContent = msg;
+    toast.style.display = "block";
+    setTimeout(() => { toast.style.display = "none"; }, 3500);
+  }
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Use your real field names
+      const fullName = form.elements["full_name"].value.trim();
+      const email = form.elements["email"].value.trim();
+      const details = form.elements["project_details"].value.trim();
+
+      if (!fullName || !email || !details) {
+        showToast("Please fill in all required fields.");
+        return;
+      }
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData
+        });
+
+        if (response.ok) {
+          showToast("Your request has been received!");
+          form.reset();
+          // Optional: go back to home tab
+          const homeBtn = document.querySelector('.nav-btn[data-target="home"]');
+          if (homeBtn) homeBtn.click();
+        } else {
+          showToast("Something went wrong. Please try again.");
+        }
+      } catch (err) {
+        showToast("Network error. Please try again.");
+      }
+    });
+  }
+
+  const cancel = document.getElementById("contactCancel");
+  if (cancel) cancel.addEventListener("click", () => {
+    document.querySelector('.nav-btn[data-target="home"]').click();
+  });
+})();
 document.querySelectorAll('.hero-ctas .cta').forEach(btn => {
   btn.addEventListener('click', () => {
     const target = btn.getAttribute('data-target');
