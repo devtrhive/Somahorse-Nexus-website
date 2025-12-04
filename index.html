@@ -525,7 +525,183 @@
   </footer>
 
   <div id="toast" class="toast" aria-hidden="true"></div>
+<link rel="stylesheet" href="styles.css">
 
+<style>
+/* =================================================
+   TALENT + CONTACT FORM STYLES (desktop + mobile)
+   ================================================= */
+
+/* Section spacing */
+#talent,
+#contact {
+  padding: 80px 0;
+}
+
+/* Center containers and limit width */
+#talent .container,
+#contact .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ---------- Talent form ---------- */
+
+#talent h2 {
+  font-size: 2rem;
+  color: #0B1A33;
+  margin-bottom: 10px;
+}
+
+#talent .lead {
+  color: #555;
+  margin-bottom: 24px;
+}
+
+#talentForm {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+/* first row 2‑column on desktop */
+#talentForm .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* ---------- Contact form ---------- */
+
+#contact h2 {
+  font-size: 2rem;
+  color: #0B1A33;
+  margin-bottom: 10px;
+}
+
+#contact .lead {
+  color: #555;
+  margin-bottom: 24px;
+}
+
+/* grid: form + sidebar on desktop */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* main contact card */
+#contact .contact-main {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+/* sidebar card */
+#contact .contact-side .card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+/* ---------- Shared form controls ---------- */
+
+#talentForm .form-group,
+#contactForm .form-group {
+  margin-bottom: 16px;
+}
+
+#talentForm .form-group label,
+#contactForm .form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #0B1A33;
+}
+
+#talentForm input,
+#talentForm select,
+#talentForm textarea,
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #F9FBFD;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#talentForm input:focus,
+#talentForm select:focus,
+#talentForm textarea:focus,
+#contactForm input:focus,
+#contactForm textarea:focus {
+  border-color: #014AAD;
+  background: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(1, 74, 173, 0.18);
+}
+
+/* buttons */
+#talentForm .btn-primary,
+#contactForm .btn-primary {
+  width: 100%;
+  padding: 14px 20px;
+  background: #014AAD;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#talentForm .btn-primary:hover,
+#contactForm .btn-primary:hover {
+  background: #013a84;
+  transform: translateY(-1px);
+}
+
+/* ---------- Mobile tweaks ---------- */
+@media (max-width: 768px) {
+
+  #talentForm {
+    padding: 22px;
+  }
+
+  #talentForm .form-grid {
+    grid-template-columns: 1fr;  /* stack fields */
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;  /* form on top, card under */
+    gap: 20px;
+  }
+
+  #contact .contact-main {
+    padding: 22px;
+  }
+
+  #contact .contact-side .card {
+    margin-top: 10px;
+  }
+}
+</style>
   <script src="script.js"></script>
 </body>
 </html>
