@@ -202,42 +202,6 @@
   });
 })();
 
-
-/* ================== CONTACT FORM ================== */
-(function () {
-  const form = document.getElementById('contactForm');
-  const toast = document.getElementById('toast');
-
-  function showToast(msg) {
-    toast.textContent = msg;
-    toast.style.display = "block";
-    setTimeout(() => { toast.style.display = "none"; }, 3500);
-  }
-
-  if (form) {
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-      const name = form.elements["name"].value.trim();
-      const email = form.elements["email"].value.trim();
-      const message = form.elements["message"].value.trim();
-
-      if (!name || !email || !message) {
-        showToast("Please fill in all required fields.");
-        return;
-      }
-
-      showToast("Your request has been received!");
-      form.reset();
-
-      document.querySelector('.nav-btn[data-target="home"]').click();
-    });
-  }
-
-  const cancel = document.getElementById("contactCancel");
-  if (cancel) cancel.addEventListener("click", () => {
-    document.querySelector('.nav-btn[data-target="home"]').click();
-  });
-})();
 document.querySelectorAll('.hero-ctas .cta').forEach(btn => {
   btn.addEventListener('click', () => {
     const target = btn.getAttribute('data-target');
