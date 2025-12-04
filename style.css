@@ -1420,3 +1420,196 @@ h1{font-size:clamp(26px,4.6vw,40px);color:var(--white);margin:0 0 12px;line-heig
     cursor: pointer;
   }
 }
+/* =========================================================
+   FINAL OVERRIDE – Talent & Contact forms (desktop + mobile)
+   ========================================================= */
+
+/* Shared layout for Talent and Contact sections */
+#talent,
+#contact {
+  padding: 80px 0;
+}
+
+#talent .container,
+#contact .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ------------------ */
+/* JOIN AS TALENT     */
+/* ------------------ */
+
+#talent h2 {
+  font-size: 2rem;
+  color: #0B1A33;
+  margin-bottom: 10px;
+}
+
+#talent .lead {
+  color: #555;
+  margin-bottom: 24px;
+}
+
+/* Talent form card */
+#talentForm {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #e4e7ec;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+
+  /* override the desktop rule that was shrinking cards */
+  max-width: 100%;
+  margin: 0;
+}
+
+/* 2‑column grid for the first row of fields on desktop */
+#talentForm .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* ------------------ */
+/* CONTACT            */
+/* ------------------ */
+
+#contact h2 {
+  font-size: 2rem;
+  color: #0B1A33;
+  margin-bottom: 10px;
+}
+
+#contact .lead {
+  color: #555;
+  margin-bottom: 24px;
+}
+
+/* Contact layout – 2 columns on desktop */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* Main contact card (left) */
+#contact .contact-main {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #e4e7ec;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+
+  /* override previous generic .card desktop rule */
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Sidebar card (right) */
+#contact .contact-side .card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #e4e7ec;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+/* ------------------ */
+/* SHARED FORM STYLES */
+/* ------------------ */
+
+#talentForm .form-group,
+#contactForm .form-group {
+  margin-bottom: 18px;
+}
+
+#talentForm .form-group label,
+#contactForm .form-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #0B1A33;
+}
+
+#talentForm input,
+#talentForm select,
+#talentForm textarea,
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #F9FBFD;
+  font-size: 0.95rem;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+#talentForm input:focus,
+#talentForm select:focus,
+#talentForm textarea:focus,
+#contactForm input:focus,
+#contactForm textarea:focus {
+  border-color: #014AAD;
+  background: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(1, 74, 173, 0.18);
+}
+
+/* Buttons in both forms */
+#talentForm .btn-primary,
+#contactForm .btn-primary {
+  width: 100%;
+  padding: 14px 20px;
+  background: #014AAD;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#talentForm .btn-primary:hover,
+#contactForm .btn-primary:hover {
+  background: #013a84;
+  transform: translateY(-1px);
+}
+
+/* ------------------ */
+/* MOBILE ADJUSTMENTS */
+/* ------------------ */
+
+@media (max-width: 768px) {
+  /* Stack Talent form fields in 1 column */
+  #talentForm {
+    padding: 22px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+  }
+
+  #talentForm .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact grid becomes single column */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #contact .contact-main {
+    padding: 22px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+  }
+
+  #contact .contact-side .card {
+    margin-top: 10px;
+  }
+}
