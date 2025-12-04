@@ -81,19 +81,30 @@
       if (isOpen) {
         card.classList.remove("open");
         body.classList.remove("open");
-        serviceCards.forEach(c => c.style.opacity = "1");
+        serviceCards.forEach(c => {
+          c.style.opacity = "1";
+          c.style.pointerEvents = "auto";
+        });
       } else {
         closeOthers(card);
         card.classList.add("open");
         body.classList.add("open");
-        serviceCards.forEach(c => { if (c !== card) c.style.opacity = "0.5"; });
+        serviceCards.forEach(c => { 
+          if (c !== card) {
+            c.style.opacity = "0.5";
+            c.style.pointerEvents = "none";
+          }
+        });
       }
     });
 
     closeBtn.addEventListener('click', () => {
       card.classList.remove("open");
       body.classList.remove("open");
-      serviceCards.forEach(c => c.style.opacity = "1");
+      serviceCards.forEach(c => {
+        c.style.opacity = "1";
+        c.style.pointerEvents = "auto";
+      });
     });
   });
 })();
@@ -179,13 +190,18 @@
       if (!info) return;
 
       inline.innerHTML = `
-        <p><strong>Problem:</strong> ${info.problem}</p>
-        <p><strong>Solutions:</strong></p>
-        <ul>${info.solutions.map(s => `<li>${s}</li>`).join('')}</ul>
-        <p><strong>Impact:</strong> ${info.impact}</p>
-
-        <button class="cta primary inline-contact">Request Proposal</button>
-        <button class="cta ghost inline-close" style="margin-left:8px">Close</button>
+        <div class="space-y-5 py-2">
+          <p class="text-gray-200 leading-relaxed"><strong class="text-primary-blue font-bold">Problem:</strong> ${info.problem}</p>
+          <div>
+            <p class="text-gray-200 mb-3 font-semibold"><strong class="text-primary-blue">Solutions:</strong></p>
+            <ul class="list-disc pl-6 space-y-2 text-gray-300">${info.solutions.map(s => `<li class="leading-relaxed">${s}</li>`).join('')}</ul>
+          </div>
+          <p class="text-gray-200 leading-relaxed"><strong class="text-primary-blue font-bold">Impact:</strong> ${info.impact}</p>
+          <div class="flex flex-wrap gap-3 pt-4">
+            <button class="cta primary inline-contact px-6 py-3 bg-gradient-to-r from-primary-blue to-light-blue hover:from-light-blue hover:to-primary-blue text-dark font-bold rounded-xl transition-all transform hover:-translate-y-1 shadow-lg">Request Proposal</button>
+            <button class="cta ghost inline-close px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/20 transition-all">Close</button>
+          </div>
+        </div>
       `;
 
       closeAllInline();
